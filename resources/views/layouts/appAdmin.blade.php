@@ -38,14 +38,21 @@
 						</div>
 						<!--//col-->
 						<div class="app-utility-item app-user-dropdown dropdown col-auto">
-							<a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="assets/images/user.png" alt="user profile"></a>
+							<p class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{auth()->user()->name}}</p>
 							<ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
 								<li><a class="dropdown-item" href="account.html">Account</a></li>
 								<li><a class="dropdown-item" href="settings.html">Settings</a></li>
 								<li>
 									<hr class="dropdown-divider">
 								</li>
-								<li><a class="dropdown-item" href="login.html">Log Out</a></li>
+								<li>
+									<form action="/logout" method="post">
+										@csrf
+										<button type="submit" class="dropdown-item">
+											<i class="bi bi-box-arrow-right"></i>Sign Out
+										</button> 
+									</form>
+								</li>
 							</ul>
 						</div>
 						<!--//app-user-dropdown-->

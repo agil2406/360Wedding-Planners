@@ -13,21 +13,7 @@
   </head>
   <body class="jumbotron" >
   @include('includes.navbar')
-  @if(session()->has('succes'))
-<div class="alert alert-succes alert-dismissible fade show" role="alert">
-  {{session('succes')}}
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
-</button>
-</div>
-@endif
 
-@if(session()->has('loginError'))
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
-  {{session('loginError')}}
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
-</button>
-</div>
-@endif
 <section class="login">
     <div class="container">
         <div class="row">
@@ -39,6 +25,21 @@
             <div class="col-md-6 ">
                 <div class="card card-galery">
                     <div class="container">
+                          @if(session()->has('succes'))
+                          <div class="alert alert-succes alert-dismissible fade show" role="alert">
+                            {{session('succes')}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
+                            </button>
+                          </div>
+                          @endif
+
+                          @if(session()->has('loginError'))
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{session('loginError')}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
+                            </button>
+                          </div>
+                          @endif
                         <div class="">
                             <div class="row">
                               <div class="col-md-6 pad">
@@ -62,14 +63,21 @@
                                   </div>
                                   <div class="row mt-2">
                                       <div class="col-md-12">
-                                        <form action="">
-                                          <label for="email" class="form-label @error('email') is-invalid @enderror d-flex">Masukkan Email</label>       
-                                            <input type="email" name="email" class="form-control d-flex" id="email" required value="">
-                                            <label for="password" class="form-label @error('password') is-invalid @enderror d-flex">Masukkan Password</label>       
-                                            <input type="password" name="password" class="form-control d-flex" id="password" required value="">
+                                        <form action="/login"  method="post">
+                                        @csrf
+                                            <label for="email" class="form-label @error('email') is-invalid @enderror">Masukkan Email</label>       
+                                            <input type="email" name="email" class="form-control" id="email" required value="{{old('email')}}">
+                                            @error('email')
+                                            <div class="invalid-feedback">
+                                              {{$message}}
+                                            </div>
+                                            @enderror
+                                            <label for="Password" class="form-label">Password</label>
+                                            <input type="password" name="password" class="form-control" id="password" required>
+                                            <div class="invalid-feedback">Please enter your password!</div>
                                             <p class="small d-flex" style="left: 0;">lupa kata sandi ?</p>
                                             <button class="btn btn-primary tn-block gradient-custom-2 w-100" type="submit"> 
-                                              <a href="/dashboard" style="text-decoration: none; color:white;" >Sign In</a>
+                                              Sign In
                                             </button>
                                             <p class="small">Gunakan akun lain</p>
                                         </form>

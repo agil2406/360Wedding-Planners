@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PaketController;
+use App\Http\Controllers\LoginController;
+
 use App\Http\Controllers\WoController;
 use App\Http\Controllers\GaleryController;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +17,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-#rekap
+
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('guest');
+Route::post('/logout', [LoginController::class, 'logout']);
+
 Route::controller(PaketController::class)->group(function () {
     Route::get('/paketwo', 'index');
     Route::get('/paket', 'create');
@@ -46,7 +52,7 @@ Route::get('/', function () {
 Route::view('/wedding', 'pages.wedding-org');
 Route::view('/dashboard', 'pages.dashboard');
 Route::view('/dashboardAdmin', 'pages.admin.dashboardAdmin');
-Route::view('/login', 'pages.login');
+
 
 Route::view('/profil-wo', 'pages.admin.profil-wo');
 Route::view('/edit-profil-wo', 'pages.admin.edit-profil-wo');
