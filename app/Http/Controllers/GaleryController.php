@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Galery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GaleryController extends Controller
 {
@@ -61,6 +62,9 @@ class GaleryController extends Controller
     public function destroy($id)
     {
         $data = Galery::find($id);
+        if ($data->image) {
+            Storage::delete($data->image);
+        }
         $data->delete();
         return redirect('/galery')->with('success', 'Data berhasil di Hapus');
     }
