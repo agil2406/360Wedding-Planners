@@ -22,6 +22,12 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout']);
 
+Route::view('/data-master-wo', 'pages.master.dm-wo');
+Route::view('/create-wo', 'pages.master.create-wo');
+Route::view('/data-master-admin', 'pages.master.dm-admin');
+Route::view('/create-admin', 'pages.master.create-admin');
+Route::view('/invoice', 'pages.invoice');
+
 Route::controller(PaketController::class)->group(function () {
     Route::get('/paketwo', 'index');
     Route::get('/paket', 'create');

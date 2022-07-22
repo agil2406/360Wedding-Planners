@@ -9,7 +9,7 @@ Dashboard
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{url('/dashboardAdmin')}}">Home</a></li>
-            <li class="breadcrumb-item">Buku Kas Umum</li>
+            <li class="breadcrumb-item">Dashboard</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -72,24 +72,6 @@ Dashboard
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-4 mb-2">
-                            <img src="{{url('frontend/assets/img/kiss.jpg')}}" class="card-img-top" alt="">
-                        </div>
-                        <div class="col-md-4 mb-2">
-                            <img src="{{url('frontend/assets/img/kiss.jpg')}}" class="card-img-top" alt="">
-                        </div>
-                        <div class="col-md-4 mb-2">
-                            <img src="{{url('frontend/assets/img/kiss.jpg')}}" class="card-img-top" alt="">
-                        </div>
-                        <div class="col-md-4 mb-2">
-                            <img src="{{url('frontend/assets/img/kiss.jpg')}}" class="card-img-top" alt="">
-                        </div>
-                        <div class="col-md-4 mb-2">
-                            <img src="{{url('frontend/assets/img/kiss.jpg')}}" class="card-img-top" alt="">
-                        </div>
-                        <div class="col-md-4 mb-2">
-                            <img src="{{url('frontend/assets/img/kiss.jpg')}}" class="card-img-top" alt="">
-                        </div>
                         <div class="col-md-4 mb-2">
                             <img src="{{url('frontend/assets/img/kiss.jpg')}}" class="card-img-top" alt="">
                         </div>

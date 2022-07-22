@@ -1,7 +1,7 @@
 @extends('layouts.appAdmin')
 
 @section('title')
-Dashboard
+Edit Profil
 @endsection
 
 @section('content')

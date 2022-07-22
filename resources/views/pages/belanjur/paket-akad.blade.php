@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Wedding Organizer
+Paket Akad Benjalur WO
 @endsection
 
 @section('content')

@@ -1,7 +1,7 @@
 @extends('layouts.appAdmin')
 
 @section('title')
-Dashboard
+Galery
 @endsection
 
 @section('content')

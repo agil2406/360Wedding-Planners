@@ -114,19 +114,39 @@
 						<li class="nav-item">
 							<a class="nav-link " href="{{url('/wo')}}">
 								<span class="nav-icon">
-									<i class="fa-solid fa-user-group"></i>
+								<i class="fa-solid fa-person"></i>
 								</span>
 								<span class="nav-link-text">Tentang WO</span>
 							</a>
-							<!--//nav-link-->
 						</li>
-						<!--//nav-item-->
 
-
-
-
+					@can('superAdmin')
+						<li class="nav-item">
+							<a class="nav-link collapsed" data-bs-target="#master" data-bs-toggle="collapse" href="#master">
+								<i class="nav-icon fa-solid fa-user-group"></i>
+								<span class="nav-link-text">Master</span>
+							</a>
+							<ul id="master" class="nav-content collapse" data-bs-parent="#menu-accordion">
+								<li class="nav-item">
+									<a class="nav-link " href="{{url('data-master-wo')}}">
+										<span class="nav-icon">
+											<i class="fa-solid fa-people-group"></i>
+										</span>
+										<span class="nav-link-text">Data WO</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link " href="{{url('data-master-admin')}}">
+										<span class="nav-icon">
+										<i class="fa-regular fa-address-book"></i>
+										</span>
+										<span class="nav-link-text">Data Admin WO</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					@endcan
 					</ul>
-					<!--//app-menu-->
 				</nav>
 				<!--//app-nav-->
 				<div class="app-sidepanel-footer">
@@ -151,24 +171,23 @@
 				<main id="main" class="main">
 
 					@yield('content')
-
 				</main>
 
-
 			</div>
-			<!--//container-fluid-->
+				
 		</div>
+
+				<footer id="footer" class="footer">
+					<div class="copyright">
+						&copy; Copyright <strong><span>360</span></strong> 2022
+					</div>
+					<div class="credits">
+					</div>
+				</footer>
+		
 	</div>
 	<!--//app-content-->
 
-	<!-- ======= Footer ======= -->
-	<footer id="footer" class="footer">
-		<div class="copyright">
-			&copy; Copyright <strong><span>360</span></strong> 2022
-		</div>
-		<div class="credits">
-		</div>
-	</footer><!-- End Footer -->
 	@include('includes.script2')
 
 

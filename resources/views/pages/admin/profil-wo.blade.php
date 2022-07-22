@@ -1,7 +1,7 @@
 @extends('layouts.appAdmin')
 
 @section('title')
-Dashboard
+Profil Wedding Organizer
 @endsection
 
 @section('content')

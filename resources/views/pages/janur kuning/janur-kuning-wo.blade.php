@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Wedding Organizer
+Janur Kuning Wedding Organizer
 @endsection
 
 @section('content')
