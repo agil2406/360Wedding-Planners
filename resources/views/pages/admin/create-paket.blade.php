@@ -31,7 +31,6 @@ Tambah Paket
                             </div>
                             <div class="col-md-8">
                                 <select class="form-select @error('wo_id') is-invalid  @enderror" aria-label="Default select example" name="wo_id">
-                                    <option class="">Pilih WO</option>
                                     @foreach ($wo as $m)
                                     @if(old('wo_id') == $m->id)
                                     <option value="{{$m->id}}" selected>{{$m->nama_wo}}</option>

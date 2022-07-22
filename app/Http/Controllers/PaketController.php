@@ -10,14 +10,14 @@ class PaketController extends Controller
 {
     public function index()
     {
-        $data = PaketWO::all();
+        $data = PaketWO::where('wo_id', auth()->user()->wo_id)->get();
         return view('pages.admin.paket-wo', compact(['data']));
     }
 
 
     public function create()
     {
-        $wo = WO::all();
+        $wo = WO::where('wo_id', auth()->user()->wo_id)->get();
         return view('pages.admin.create-paket', compact(['wo']));
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PaketWO;
+use App\Models\WO;
 use Illuminate\Http\Request;
 
 class WoController extends Controller
@@ -10,6 +11,8 @@ class WoController extends Controller
 
     public function index()
     {
+        $data = WO::where('id', auth()->user()->wo_id)->get();
+        return view('pages.admin.profil-wo', compact(['data']));
     }
 
 

@@ -11,7 +11,7 @@ class GaleryController extends Controller
 
     public function index()
     {
-        $data = Galery::all();
+        $data = Galery::where('wo_id', auth()->user()->wo_id)->get();
         return view('pages.admin.galery-wo', compact(['data']));
     }
 
