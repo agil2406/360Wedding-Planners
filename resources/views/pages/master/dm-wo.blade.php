@@ -1,7 +1,7 @@
 @extends('layouts.appAdmin')
 
 @section('title')
-data master WO
+Data Master WO
 @endsection
 
 @section('content')
@@ -23,7 +23,7 @@ data master WO
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
-           
+
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Tabel WO</h5>
@@ -45,11 +45,6 @@ data master WO
                                         </div>
                                     </th>
                                     <th>
-                                        <div class="row justify-content-center">
-                                            Paket WO
-                                        </div>
-                                    </th>
-                                    <th>
                                         <div class="row justify-content-center"> Aksi
                                         </div>
                                     </th>
@@ -57,7 +52,46 @@ data master WO
                             </thead>
 
                             <tbody>
+                                @foreach ($data as $d )
+                                <tr>
+                                    <td>
+                                        <div class="row justify-content-center">
+                                            {{$loop->iteration}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="row justify-content-center">
+                                            {{$d->nama_wo}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="row justify-content-center">
+                                                <div class="col-sm-2">
 
+                                                    <a href="{{url('/wo').'/'.$d->id.'/edit'}}" class="btn btn-warning text-white">Ubah</a>
+
+                                                </div>
+                                                <div class="col-sm-2">
+
+                                                    <a href="{{url('/wo').'/'.$d->id}}" class="btn btn-success text-white">Detail</a>
+
+                                                </div>
+                                                <div class="col-sm-2">
+
+                                                    <form action="{{url('/wo').'/'.$d->id}}" method="POST">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button class="btn btn-danger text-white" type="submit" value="Delete" onclick="return confirm('Yakin ingin menghapus ?')">Hapus</i></button>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

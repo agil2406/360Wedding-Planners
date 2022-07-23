@@ -9,7 +9,8 @@ Profil Wedding Organizer
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{url('/dashboardAdmin')}}">Home</a></li>
-            <li class="breadcrumb-item">Profil</li>
+            <li class="breadcrumb-item">Data WO</li>
+            <li class="breadcrumb-item">Detail Data WO</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -21,22 +22,20 @@ Profil Wedding Organizer
             <div class="card-body">
                 <h5 class="card-title">Profil</h5>
                 <div class="row center">
-                    <h4>Tentang Kami</h4>
+                    <h4>{{$data->nama_wo}}</h4>
                 </div>
                 <div class="row">
                     <div class="col-md-8">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Totam doloremque quisquam rem facilis deleniti aspernatur
-                            deserunt reprehenderit, facere dolorum atque necessitatibus accusantium.
-                            itaque voluptate illo optio consequatur voluptas animi?
+                        <p>
+                            {!!$data->deskripsi!!}
                         </p>
                     </div>
                     <div class="col-md-4">
-                        <img src="{{url('frontend/assets/img/kiss.jpg')}}" class="card-img-top" alt="">
+                        <img src="{{url('storage/'.$data->image)}}" class="card-img-top" alt="">
                     </div>
                 </div>
                 <button class="btn btn-primary tn-block gradient-custom-2 center mt-2 mb-2" type="submit">
-                    <a href="/wedding-org" style="text-decoration: none; color:white;">Ubah data</a>
+                    <a href="{{url('/wo')}}" style="text-decoration: none; color:white;">Kembali</a>
                 </button>
             </div>
         </div>

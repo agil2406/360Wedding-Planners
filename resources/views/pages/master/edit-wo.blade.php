@@ -1,7 +1,7 @@
 @extends('layouts.appAdmin')
 
 @section('title')
-Create Wedding Organizer
+Edit Wedding Organizer
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@ Create Wedding Organizer
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{url('/dashboardAdmin')}}">Home</a></li>
             <li class="breadcrumb-item">Data WO</li>
-            <li class="breadcrumb-item">Tambah Data WO</li>
+            <li class="breadcrumb-item">Ubah Data WO</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -28,14 +28,15 @@ Create Wedding Organizer
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Tabel WO</h5>
-                    <form action="{{url('/wo')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{url('/wo'.'/'.$data->id)}}" method="post" enctype="multipart/form-data">
+                        @method('put')
                         @csrf
                         <div class="row">
                             <div class="col-md-2">
                                 <label for="nama_wo" class="col-form-label">Nama WO</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control @error ('nama_wo') is-invalid @enderror" id="nama_wo" name="nama_wo" value="{{ old('nama_wo')}}" required autofocus>
+                                <input type="text" class="form-control @error ('nama_wo') is-invalid @enderror" id="nama_wo" name="nama_wo" value="{{ $data->nama_wo}}" required autofocus>
                                 @error('nama_wo')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -52,7 +53,7 @@ Create Wedding Organizer
                                 @enderror
                             </div>
                             <div class="col-md-8">
-                                <input id="deskripsi" type="hidden" name="deskripsi" value="{{old('deskripsi')}}">
+                                <input id="deskripsi" type="hidden" name="deskripsi" value="{{$data->deskripsi}}">
                                 <trix-editor input="deskripsi"></trix-editor>
                             </div>
                         </div>
@@ -64,7 +65,7 @@ Create Wedding Organizer
                                 <label for="image" class="col-form-label">Foto WO </label>
                             </div>
                             <div class="col-md-8">
-                                <input type="file" class="form-control @error ('image') is-invalid @enderror" id="image" name="image" value="{{ old('image')}}">
+                                <input type="file" class="form-control @error ('image') is-invalid @enderror" id="image" name="image" value="{{ $data->image}}">
                                 @error('image')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -75,7 +76,7 @@ Create Wedding Organizer
 
 
                         <div class="d-flex justify-content-center">
-                            <button class="btn btn-primary tn-block gradient-custom-2 center mt-2 mb-2 text-white" type="submit">Tambah Data</button>
+                            <button class="btn btn-primary tn-block gradient-custom-2 center mt-2 mb-2 text-white" type="submit">Simpan Data</button>
                         </div>
 
                     </form>

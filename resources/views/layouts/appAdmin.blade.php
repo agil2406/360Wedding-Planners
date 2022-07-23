@@ -50,7 +50,7 @@
 										@csrf
 										<button type="submit" class="dropdown-item">
 											<i class="bi bi-box-arrow-right"></i>Sign Out
-										</button> 
+										</button>
 									</form>
 								</li>
 							</ul>
@@ -112,15 +112,15 @@
 						<!--//nav-item-->
 
 						<li class="nav-item">
-							<a class="nav-link " href="{{url('/wo')}}">
+							<a class="nav-link " href="{{url('/profilwo')}}">
 								<span class="nav-icon">
-								<i class="fa-solid fa-person"></i>
+									<i class="fa-solid fa-person"></i>
 								</span>
 								<span class="nav-link-text">Tentang WO</span>
 							</a>
 						</li>
 
-					@can('superAdmin')
+						@can('superAdmin')
 						<li class="nav-item">
 							<a class="nav-link collapsed" data-bs-target="#master" data-bs-toggle="collapse" href="#master">
 								<i class="nav-icon fa-solid fa-user-group"></i>
@@ -128,7 +128,7 @@
 							</a>
 							<ul id="master" class="nav-content collapse" data-bs-parent="#menu-accordion">
 								<li class="nav-item">
-									<a class="nav-link " href="{{url('data-master-wo')}}">
+									<a class="nav-link " href="{{url('wo')}}">
 										<span class="nav-icon">
 											<i class="fa-solid fa-people-group"></i>
 										</span>
@@ -136,16 +136,16 @@
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link " href="{{url('data-master-admin')}}">
+									<a class="nav-link " href="{{url('admin')}}">
 										<span class="nav-icon">
-										<i class="fa-regular fa-address-book"></i>
+											<i class="fa-regular fa-address-book"></i>
 										</span>
 										<span class="nav-link-text">Data Admin WO</span>
 									</a>
 								</li>
 							</ul>
 						</li>
-					@endcan
+						@endcan
 					</ul>
 				</nav>
 				<!--//app-nav-->
@@ -174,17 +174,17 @@
 				</main>
 
 			</div>
-				
+
 		</div>
 
-				<footer id="footer" class="footer">
-					<div class="copyright">
-						&copy; Copyright <strong><span>360</span></strong> 2022
-					</div>
-					<div class="credits">
-					</div>
-				</footer>
-		
+		<footer id="footer" class="footer">
+			<div class="copyright">
+				&copy; Copyright <strong><span>360</span></strong> 2022
+			</div>
+			<div class="credits">
+			</div>
+		</footer>
+
 	</div>
 	<!--//app-content-->
 

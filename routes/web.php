@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\LoginController;
 
@@ -22,8 +23,6 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::view('/data-master-wo', 'pages.master.dm-wo');
-Route::view('/create-wo', 'pages.master.create-wo');
 Route::view('/data-master-admin', 'pages.master.dm-admin');
 Route::view('/create-admin', 'pages.master.create-admin');
 Route::view('/invoice', 'pages.invoice');
@@ -39,10 +38,21 @@ Route::controller(PaketController::class)->group(function () {
 });
 Route::controller(WoController::class)->group(function () {
     Route::get('/wo', 'index');
-    Route::get('/paket/{id}', 'show');
-    Route::put('/paket/{id}/update', 'update');
-    Route::get('/paket/{id}/edit', 'edit');
-    Route::delete('/paket/{id}', 'destroy');
+    Route::get('/create-wo', 'create');
+    Route::post('/wo', 'store');
+    Route::delete('/wo/{id}', 'destroy');
+    Route::put('/wo/{id}', 'update');
+    Route::get('/wo/{id}/edit', 'edit');
+    Route::get('/wo/{id}', 'show');
+});
+Route::controller(AdminController::class)->group(function () {
+    Route::get('/admin', 'index');
+    Route::get('/create-admin', 'create');
+    Route::post('/admin', 'store');
+    Route::delete('/admin/{id}', 'destroy');
+    Route::put('/admin/{id}', 'update');
+    Route::get('/admin/{id}/edit', 'edit');
+    Route::get('/admin/{id}', 'show');
 });
 Route::controller(GaleryController::class)->group(function () {
     Route::get('/galery', 'index');

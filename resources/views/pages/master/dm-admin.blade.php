@@ -1,7 +1,7 @@
 @extends('layouts.appAdmin')
 
 @section('title')
-data master admin
+Profil Admin
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@ data master admin
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{url('/dashboardAdmin')}}">Home</a></li>
-            <li class="breadcrumb-item">Data WO</li>
+            <li class="breadcrumb-item">Data Admin</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -23,7 +23,7 @@ data master admin
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
-           
+
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Tabel Admin WO</h5>
@@ -58,6 +58,51 @@ data master admin
 
                             <tbody>
 
+                                @foreach ($data as $d )
+                                <tr>
+                                    <td>
+                                        <div class="row justify-content-center">
+                                            {{$loop->iteration}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="row justify-content-center">
+                                            {{$d->name}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="row justify-content-center">
+                                            {{$d->wo->nama_wo}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="row justify-content-center">
+                                                <div class="col-sm-2">
+
+                                                    <a href="{{url('/admin').'/'.$d->id.'/edit'}}" class="btn btn-warning text-white">Ubah</a>
+
+                                                </div>
+                                                <div class="col-sm-2">
+
+                                                    <a href="{{url('/admin').'/'.$d->id}}" class="btn btn-success text-white">Detail</a>
+
+                                                </div>
+                                                <div class="col-sm-2">
+
+                                                    <form action="{{url('/admin').'/'.$d->id}}" method="POST">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button class="btn btn-danger text-white" type="submit" value="Delete" onclick="return confirm('Yakin ingin menghapus ?')">Hapus</i></button>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
