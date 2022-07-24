@@ -1,7 +1,7 @@
 @extends('layouts.appAdmin')
 
 @section('title')
-Edit Profil
+Edit Wedding Organizer
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@ Edit Profil
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{url('/dashboardAdmin')}}">Home</a></li>
-            <li class="breadcrumb-item">Profil WO</li>
-            <li class="breadcrumb-item">Ubah Data Profil</li>
+            <li class="breadcrumb-item">Data WO</li>
+            <li class="breadcrumb-item">Ubah Data WO</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -28,7 +28,7 @@ Edit Profil
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Tabel WO</h5>
-                    <form action="{{url('/profil-wo'.'/'.$data->id)}}" method="post" enctype="multipart/form-data">
+                    <form action="{{url('/wo'.'/'.$data->id)}}" method="post" enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="row">

@@ -1,7 +1,7 @@
 @extends('layouts.appAdmin')
 
 @section('title')
-create wedding organizer
+Create Wedding Organizer
 @endsection
 
 @section('content')
@@ -24,19 +24,19 @@ create wedding organizer
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
-           
+
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Tabel WO</h5>
-                    <form action="" method="post">
+                    <form action="{{url('/wo')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-2">
-                                <label for="nama" class="col-form-label">Nama WO</label>
+                                <label for="nama_wo" class="col-form-label">Nama WO</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control @error ('nama') is-invalid @enderror" id="nama" name="nama" value="{{ old('nama')}}" required autofocus>
-                                @error('nama')
+                                <input type="text" class="form-control @error ('nama_wo') is-invalid @enderror" id="nama_wo" name="nama_wo" value="{{ old('nama_wo')}}" required autofocus>
+                                @error('nama_wo')
                                 <div class="invalid-feedback">
                                     {{$message}}
                                 </div>
@@ -46,7 +46,7 @@ create wedding organizer
 
                         <div class="row mt-3">
                             <div class="col-md-2">
-                                <label for="deskripsi" class="col-form-label">Deskripsi </label>
+                                <label for="deskripsi" class="col-form-label">Deskripsi WO</label>
                                 @error('deskripsi')
                                 <p class="text-danger"> {{$message}}</p>
                                 @enderror
@@ -57,15 +57,15 @@ create wedding organizer
                             </div>
                         </div>
 
-                      
-                      
+
+
                         <div class="row mt-3">
                             <div class="col-md-2">
-                                <label for="uraian" class="col-form-label">foto WO </label>
+                                <label for="image" class="col-form-label">Foto WO </label>
                             </div>
                             <div class="col-md-8">
-                                <input type="file" class="form-control @error ('uraian') is-invalid @enderror" id="uraian" name="uraian" value="{{ old('uraian')}}">
-                                @error('uraian')
+                                <input type="file" class="form-control @error ('image') is-invalid @enderror" id="image" name="image" value="{{ old('image')}}">
+                                @error('image')
                                 <div class="invalid-feedback">
                                     {{$message}}
                                 </div>
@@ -73,9 +73,9 @@ create wedding organizer
                             </div>
                         </div>
 
-                     
+
                         <div class="d-flex justify-content-center">
-                            <button class="btn btn-primary tn-block gradient-custom-2 center mt-2 mb-2" type="submit">Tambah Data</button>
+                            <button class="btn btn-primary tn-block gradient-custom-2 center mt-2 mb-2 text-white" type="submit">Tambah Data</button>
                         </div>
 
                     </form>

@@ -1,7 +1,7 @@
 @extends('layouts.appAdmin')
 
 @section('title')
-Edit Profil
+Create Admin
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@ Edit Profil
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{url('/dashboardAdmin')}}">Home</a></li>
-            <li class="breadcrumb-item">Profil WO</li>
-            <li class="breadcrumb-item">Ubah Data Profil</li>
+            <li class="breadcrumb-item">Data Admin</li>
+            <li class="breadcrumb-item">Ubah Data Admin</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -28,16 +28,16 @@ Edit Profil
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Tabel WO</h5>
-                    <form action="{{url('/profil-wo'.'/'.$data->id)}}" method="post" enctype="multipart/form-data">
+                    <form action="{{url('/admin'.'/'.$data->id)}}" method="post">
                         @method('put')
                         @csrf
                         <div class="row">
                             <div class="col-md-2">
-                                <label for="nama_wo" class="col-form-label">Nama WO</label>
+                                <label for="name" class="col-form-label">Nama Admin</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control @error ('nama_wo') is-invalid @enderror" id="nama_wo" name="nama_wo" value="{{ $data->nama_wo}}" required autofocus>
-                                @error('nama_wo')
+                                <input type="text" class="form-control @error ('name') is-invalid @enderror" id="name" name="name" value="{{ $data->name}}" required autofocus>
+                                @error('name')
                                 <div class="invalid-feedback">
                                     {{$message}}
                                 </div>
@@ -47,32 +47,45 @@ Edit Profil
 
                         <div class="row mt-3">
                             <div class="col-md-2">
-                                <label for="deskripsi" class="col-form-label">Deskripsi WO</label>
-                                @error('deskripsi')
-                                <p class="text-danger"> {{$message}}</p>
-                                @enderror
+                                <label for="email" class="col-form-label">Email </label>
                             </div>
                             <div class="col-md-8">
-                                <input id="deskripsi" type="hidden" name="deskripsi" value="{{$data->deskripsi}}">
-                                <trix-editor input="deskripsi"></trix-editor>
-                            </div>
-                        </div>
-
-
-
-                        <div class="row mt-3">
-                            <div class="col-md-2">
-                                <label for="image" class="col-form-label">Foto WO </label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="file" class="form-control @error ('image') is-invalid @enderror" id="image" name="image" value="{{ $data->image}}">
-                                @error('image')
+                                <input type="text" class="form-control @error ('email') is-invalid @enderror" id="email" name="email" value="{{ $data->email}}">
+                                @error('email')
                                 <div class="invalid-feedback">
                                     {{$message}}
                                 </div>
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="row mt-3">
+                            <div class="col-md-2">
+                                <label for="password" class="col-form-label">Password </label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="password" class="form-control @error ('password') is-invalid @enderror" id="password" name="password" value="{{ $data->password}}" readonly>
+                                @error('password')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-md-2">
+                                <label for="wo_id" class="col-form-label">Nama WO </label>
+                            </div>
+                            <div class="col-md-8">
+                                <select class="form-select" aria-label="Default select example" name="wo_id">
+                                    <option value="{{$data->wo_id}}" selected>{{$data->wo->nama_wo}}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <input type="text" value="{{$data->level}}" name="level" hidden>
+                        <input type="text" value="{{$data->email_verified_at}}" name="email_verified_at" hidden>
 
 
                         <div class="d-flex justify-content-center">

@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\LoginController;
 
 use App\Http\Controllers\WoController;
 use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,10 +24,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::view('/data-master-wo', 'pages.master.dm-wo');
-Route::view('/create-wo', 'pages.master.create-wo');
-Route::view('/data-master-admin', 'pages.master.dm-admin');
-Route::view('/create-admin', 'pages.master.create-admin');
+
 Route::view('/invoice', 'pages.invoice');
 
 Route::controller(PaketController::class)->group(function () {
@@ -39,10 +38,21 @@ Route::controller(PaketController::class)->group(function () {
 });
 Route::controller(WoController::class)->group(function () {
     Route::get('/wo', 'index');
-    Route::get('/paket/{id}', 'show');
-    Route::put('/paket/{id}/update', 'update');
-    Route::get('/paket/{id}/edit', 'edit');
-    Route::delete('/paket/{id}', 'destroy');
+    Route::get('/create-wo', 'create');
+    Route::post('/wo', 'store');
+    Route::delete('/wo/{id}', 'destroy');
+    Route::put('/wo/{id}', 'update');
+    Route::get('/wo/{id}/edit', 'edit');
+    Route::get('/wo/{id}', 'show');
+});
+Route::controller(AdminController::class)->group(function () {
+    Route::get('/admin', 'index');
+    Route::get('/create-admin', 'create');
+    Route::post('/admin', 'store');
+    Route::delete('/admin/{id}', 'destroy');
+    Route::put('/admin/{id}', 'update');
+    Route::get('/admin/{id}/edit', 'edit');
+    Route::get('/admin/{id}', 'show');
 });
 Route::controller(GaleryController::class)->group(function () {
     Route::get('/galery', 'index');
@@ -59,9 +69,12 @@ Route::view('/wedding', 'pages.wedding-org');
 Route::view('/dashboard', 'pages.dashboard');
 Route::view('/dashboardAdmin', 'pages.admin.dashboardAdmin');
 
+Route::controller(ProfilController::class)->group(function () {
+    Route::get('/profil-wo/{id}', 'index');
+    Route::get('/edit-profil-wo/{id}', 'edit');
+    Route::put('/profil-wo/{id}', 'update');
+});
 
-Route::view('/profil-wo', 'pages.admin.profil-wo');
-Route::view('/edit-profil-wo', 'pages.admin.edit-profil-wo');
 
 Route::view('/belanjur-wo', 'pages.belanjur.benjalur-wo');
 Route::view('/paket-akad', 'pages.benjalur.paket-akad');
