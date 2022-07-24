@@ -40,55 +40,63 @@
                             </button>
                           </div>
                           @endif
-                        <div class="">
-                            <div class="row">
-                              <div class="col-md-6 pad">
-                                <h4>Sign Up</h4>
+                          <ul class="nav nav-tabs nav-tabs-bordered justify-content-center text-center mt-3 mb-3">
+
+                            <li class="nav-item">
+                              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview"><h4>Sign in</h4></button>
+                            </li>
+
+                            <li class="nav-item">
+                              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit"><h4> Sign UP</h4></button>
+                            </li>
+
+
+                          </ul>
+
+                          <div class="tab-content pt-2">
+
+                            <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                              <div class="row">
+                                  <div class="col-md-6">
+                                    <button class="btn btn-primary tn-block gradient-custom-2 w-100" type="submit"><i class="fa-brands fa-google"></i> Google</button>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <button class="btn btn-primary tn-block gradient w-100" type="submit"><i class="fa-brands fa-facebook-f"></i> Facebook</button>
+                                  </div>
                               </div>
-                              <div class="col-md-6 pad">
-                                <h4>Sign In</h4>
+                              <div class="row mt-2">
+                                  <div class="col-md-12">
+                                      <form action="/login"  method="post">
+                                      @csrf
+                                        <label for="email" class="form-label @error('email') is-invalid @enderror">Masukkan Email</label>       
+                                        <input type="email" name="email" class="form-control" id="email" required value="{{old('email')}}">
+                                        @error('email')
+                                          <div class="invalid-feedback">
+                                            {{$message}}
+                                          </div>
+                                        @enderror
+                                        <label for="Password" class="form-label">Password</label>
+                                        <input type="password" name="password" class="form-control" id="password" required>
+                                        <div class="invalid-feedback">Please enter your password!</div>
+                                        <p class="small d-flex" style="left: 0;">lupa kata sandi ?</p>
+                                        <button class="btn btn-primary tn-block gradient-custom-2 w-100" type="submit"> 
+                                          Sign In
+                                        </button>
+                                        <p class="small">Gunakan akun lain</p>
+                                      </form>
+                                    </div>
                               </div>
                             </div>
-                            <div class="container">
-                              <div class="row">
-                               <div class="col-md-1"></div>
-                               <div class="col-md-10">
-                                  <div class="row">
-                                      <div class="col-md-6">
-                                      <button class="btn btn-primary tn-block gradient-custom-2 w-100" type="submit"><i class="fa-brands fa-google"></i> Google</button>
-                                    </div>
-                                    <div class="col-md-6">
-                                      <button class="btn btn-primary tn-block gradient w-100" type="submit"><i class="fa-brands fa-facebook-f"></i> Facebook</button>
-                                    </div>
-                                  </div>
-                                  <div class="row mt-2">
-                                      <div class="col-md-12">
-                                        <form action="/login"  method="post">
-                                        @csrf
-                                            <label for="email" class="form-label @error('email') is-invalid @enderror">Masukkan Email</label>       
-                                            <input type="email" name="email" class="form-control" id="email" required value="{{old('email')}}">
-                                            @error('email')
-                                            <div class="invalid-feedback">
-                                              {{$message}}
-                                            </div>
-                                            @enderror
-                                            <label for="Password" class="form-label">Password</label>
-                                            <input type="password" name="password" class="form-control" id="password" required>
-                                            <div class="invalid-feedback">Please enter your password!</div>
-                                            <p class="small d-flex" style="left: 0;">lupa kata sandi ?</p>
-                                            <button class="btn btn-primary tn-block gradient-custom-2 w-100" type="submit"> 
-                                              Sign In
-                                            </button>
-                                            <p class="small">Gunakan akun lain</p>
-                                        </form>
 
-                                      </div>
-                                  </div>
-                               </div>
-                               <div class="col-md-1"></div>
-                              </div>
-                            </div> 
-                        </div>
+                            <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                            </div>
+
+                            <div class="tab-pane fade pt-3" id="profile-change-password">
+                            </div>
+
+                          </div>
+
+
                     </div>
                 </div>
             </div>
