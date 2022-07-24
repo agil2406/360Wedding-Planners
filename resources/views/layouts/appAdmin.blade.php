@@ -112,7 +112,7 @@
 						<!--//nav-item-->
 
 						<li class="nav-item">
-							<a class="nav-link " href="{{url('/profilwo')}}">
+							<a class="nav-link " href="{{url('/profil-wo'.'/'.auth()->user()->wo_id)}}">
 								<span class="nav-icon">
 									<i class="fa-solid fa-person"></i>
 								</span>

@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 
 use App\Http\Controllers\WoController;
 use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,8 +24,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::view('/data-master-admin', 'pages.master.dm-admin');
-Route::view('/create-admin', 'pages.master.create-admin');
+
 Route::view('/invoice', 'pages.invoice');
 
 Route::controller(PaketController::class)->group(function () {
@@ -69,9 +69,12 @@ Route::view('/wedding', 'pages.wedding-org');
 Route::view('/dashboard', 'pages.dashboard');
 Route::view('/dashboardAdmin', 'pages.admin.dashboardAdmin');
 
+Route::controller(ProfilController::class)->group(function () {
+    Route::get('/profil-wo/{id}', 'index');
+    Route::get('/edit-profil-wo/{id}', 'edit');
+    Route::put('/profil-wo/{id}', 'update');
+});
 
-Route::view('/profil-wo', 'pages.admin.profil-wo');
-Route::view('/edit-profil-wo', 'pages.admin.edit-profil-wo');
 
 Route::view('/belanjur-wo', 'pages.belanjur.benjalur-wo');
 Route::view('/paket-akad', 'pages.benjalur.paket-akad');
