@@ -1,11 +1,4 @@
 <link href="{{ url('frontend/assets/css/app.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="{{url('frontend/assets/vendors/mdi/css/materialdesignicons.min.css')}}">
-<link rel="stylesheet" href="{{url('frontend/assets/vendors/css/vendor.bundle.base.css')}}">
-<link href="{{ url('frontend/assets/vendors/mdi/css/materialdesignicons.min.css') }}" rel="stylesheet">
-<!-- endinject -->
-<!-- Plugin css for this page -->
-<link rel="stylesheet" href="{{url('frontend/assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
-<link rel="stylesheet" href="{{url('frontend/assets/vendors/jvectormap/jquery-jvectormap.css')}}">
 
 <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css

@@ -89,6 +89,59 @@
                             </div>
 
                             <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                              <form action="{{url('/register')}}" method="post">
+                                  @csrf
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label for="name" class="col-form-label">Nama Admin</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control @error ('name') is-invalid @enderror" id="name" name="name" value="{{ old('name')}}" required autofocus>
+                                            @error('name')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-2">
+                                            <label for="email" class="col-form-label">Email </label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control @error ('email') is-invalid @enderror" id="email" name="email" value="{{ old('email')}}">
+                                            @error('email')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-2">
+                                            <label for="password" class="col-form-label">Password </label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="password" class="form-control @error ('password') is-invalid @enderror" id="password" name="password" value="{{ old('password')}}">
+                                            @error('password')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <input type="text" value="client" name="level" hidden>
+                                    <input type="text" value="" name="email_verified_at" hidden>
+
+
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-primary tn-block gradient-custom-2 center mt-2 mb-2 text-white" type="submit">Tambah Data</button>
+                                    </div>
+
+                              </form>
                             </div>
 
                             <div class="tab-pane fade pt-3" id="profile-change-password">

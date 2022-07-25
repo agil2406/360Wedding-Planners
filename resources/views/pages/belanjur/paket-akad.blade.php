@@ -136,8 +136,10 @@ Paket Akad Benjalur WO
                                         <p>harga</p>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-3">
+                                <div class="row justify-content-center center">
+                                    <div class="col-md-3 text-center center" style="background-color: salmoon ;">
+                                        <p class="mb-0 small text-center">Hemat</p>
+                                        <p>5000k</p>
 
                                     </div>
                                     <div class="col-md-9">
@@ -149,9 +151,63 @@ Paket Akad Benjalur WO
                                 <p class="small mb-0">kapasitas</p>
                                 <p><b>100 pax</b></p>
                                 <div class="d-flex justify-content-center align-items-center center">
-                                    <div class="justify-content-center align-items-center center mb-5">
-                                        <button class="btn btn-primary tn-block gradient-custom-2" type="submit">pesan sekarang</button>
+                                    <div class="justify-content-center align-items-center center mb-3">
+                                        <button class="btn btn-primary tn-block gradient-custom-2" data-bs-toggle="modal" data-bs-target="#basicModal" type="submit">pesan sekarang</button>
                                         <button class="btn btn-primary tn-block gradient-custom-2" type="submit">chat me</button>
+                                    </div>
+                                    <div class="modal fade" id="basicModal" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-1"></div>
+                                                        <div class="col-md-10">
+                                                            <div class="modal-header justify-content-center">
+                                                                <h5 class="modal-title text-center">Pesan Sekarang</h5>
+                                                            </div>
+                                                            <div class="card card-galery mb-4">
+                                                                <div class="card-body">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-2">
+                                                                            <img src="{{url('frontend/assets/img/kiss.jpg')}}" class="rounded-1" width="90px"  alt="" >
+                                                                        </div>
+                                                                        <div class="col-sm-9">
+                                                                            <p class="mt-1 mb-0">nama paket</p>
+                                                                            <p class="small">IDR 5.000.000</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="d-flex justify-content-start">
+                                                                <p>
+                                                                Sebelum melanjutkan ke proses pembayaran, mohon lengkapi tanggal layanan Anda terlebih dahulu.
+                                                                </p>
+                                                            </div>
+
+                                                            <div class="mb-4">
+                                                                <form action="">
+                                                                    <label for="tanggal-lahir" class="col-form-label">Tanggal Layanan </label>
+                                                                    <input type="date" class="form-control @error ('tanggal-lahir') is-invalid @enderror" id="tanggal-lahir" name="tanggal-lahir" value="{{ old('tanggal-lahir')}}">
+                                                                    @error('tanggal-lahir')
+                                                                        <div class="invalid-feedback">
+                                                                        {{$message}}
+                                                                        </div>
+                                                                    @enderror
+                                                                </form>
+                                                            </div>
+                                                            <a href="/detail-order" class="btn btn-primary tn-block gradient-custom-2 mb-4"> Bayar Lunas - IDR 5,000.000</a>
+                                                            
+
+
+                                                        </div>
+                                                        <div class="col-md-1"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

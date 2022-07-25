@@ -5,7 +5,7 @@ invoice
 @endsection
 
 @section('content')
-<section class="invoice">
+<section class="invoice mh-100">
     <div class="container">
         <div class="row mt-5 mt-header">
             <div class="col-md-2">
@@ -17,7 +17,7 @@ invoice
                     <div class="row">
                         <div class="row">
                             <div class="col-md-7">
-                                <p>logo ayodiya</p>
+                                <img src="{{url('frontend/assets/img/kiss.jpg')}}" class="rounded-1" width="195px"  alt="" >
                                 <hr>
                                 <p class="mb-0"><b>Nama Client</b></p>
                                 <p>informasi/conctact</p>
@@ -25,8 +25,11 @@ invoice
                             <div class="col-md-5">
                                 <p class="mb-0"><b>AYODIYA WEDDING ORGANIZER</b> </p>
                                 <p class="mb-0">phone/WA: 087750607082</p>
-                                <p>email: ayodiya@gmail.com</p>
-                                <hr>
+                                <p class="mb-0">email: ayodiya@gmail.com</p>
+                                <p >Alamat : Jalan seroja no 9 praya Lombok tengah</p>
+                                <hr class="mt-4">
+                                <p class="mb-0"><b>INVOICE###</b></p>
+                                <p>25/05/2022</p>
                             </div>     
                         </div>
                         <div class="row">
@@ -57,16 +60,16 @@ invoice
                                 </table>
                             </div>
                         </div>
-                        <div class="row mt-3">
-                            <div class="col-md-7">
+                        <div class="d-flex justify-content-between align-items-end">
+                            <div class="">
                                 <p class="mb-0">Bank            : </p>
                                 <p class="mb-0">Kode Bank       :</p>
                                 <p class="mb-0">Nomer rekening  :</p>
                                 <p class="mb-0">Kode Refrensi   :</p>
                             </div>
-                            <div class="col-md-5">
-                               
-                                <hr>
+                            <div class="">
+                            <p class="mb-0">Logo            : </p>
+                                
                             </div>     
                         </div>
                     </div>
