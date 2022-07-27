@@ -74,9 +74,3 @@ Route::controller(ProfilController::class)->group(function () {
     Route::get('/edit-profil-wo/{id}', 'edit');
     Route::put('/profil-wo/{id}', 'update');
 });
-
-
-Route::view('/belanjur-wo', 'pages.belanjur.benjalur-wo');
-Route::view('/paket-akad', 'pages.benjalur.paket-akad');
-Route::view('/ayodiya-wo', 'pages.ayodiya.ayodiya-wo');
-Route::view('/janur-kuning-wo', 'pages.janur kuning.janur-kuning-wo');

@@ -18,23 +18,23 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
- 
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/paketwo');
-        }else if (auth()->check()){
-            return redirect()->intended('/paketwo');
+            return redirect()->intended('/dashboardAdmin');
+        } else if (auth()->check()) {
+            return redirect()->intended('/dashboardAdmin');
         }
-        return back()->with('loginError','Login Failed');
+        return back()->with('loginError', 'Login Failed');
     }
     public function logout(Request $request)
     {
         Auth::logout();
-    
+
         $request->session()->invalidate();
-    
+
         $request->session()->regenerateToken();
-    
+
         return redirect('/');
     }
 }
