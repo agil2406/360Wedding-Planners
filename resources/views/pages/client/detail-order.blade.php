@@ -11,7 +11,7 @@ Dashboard
         <h3 class="text-center">Rangkuman Pembayaran</h3>
     </div>
 
-    <div class="card card-galery w-75 mx-auto p-3">
+    <div class="card card-galery w-75 mx-auto p-3 mb-4">
         <div class="d-flex justify-content-between align-items-center">
             <div>
                 <p>Detail Pesanan</p>
@@ -26,10 +26,10 @@ Dashboard
         <hr>
         <div class="d-flex justify-content-between align-items-center">
             <div>
-                <p>Gunakan kode Prom</p>
+                <p>Upgrade Paket ?</p>
             </div>
             <div>
-            <a href="/detail-order" class="btn btn-primary tn-block gradient-custom-2 mb-4"> masukkan kode promo0</a>
+            <a href="/upgrade" class="btn btn-primary tn-block gradient-custom-2 mb-4"> Upgrade</a>
             </div>
         </div>
         <hr>
@@ -52,7 +52,7 @@ Dashboard
         </div>
 
         <div class="d-flex justify-content-center mt-4">
-            <a href="/detail-order" class="btn btn-primary tn-block gradient-custom-2 mb-4"> Lanjutkan Pembayaran</a>
+            <a href="/invoice" class="btn btn-primary tn-block gradient-custom-2 mb-4"> Lanjutkan Pembayaran</a>
         </div>
 
     </div>

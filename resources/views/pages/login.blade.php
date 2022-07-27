@@ -79,7 +79,7 @@
                                         <input type="password" name="password" class="form-control" id="password" required>
                                         <div class="invalid-feedback">Please enter your password!</div>
                                         <p class="small d-flex" style="left: 0;">lupa kata sandi ?</p>
-                                        <button class="btn btn-primary tn-block gradient-custom-2 w-100" type="submit"> 
+                                        <button class="btn btn-primary tn-block gradient-custom-2" type="submit"> 
                                           Sign In
                                         </button>
                                         <p class="small">Gunakan akun lain</p>
@@ -138,7 +138,7 @@
 
 
                                     <div class="d-flex justify-content-center">
-                                        <button class="btn btn-primary tn-block gradient-custom-2 center mt-2 mb-2 text-white" type="submit">Tambah Data</button>
+                                        <button class="btn btn-primary tn-block gradient-custom-2 center mt-2 mb-2 text-white" type="submit">Sign UP</button>
                                     </div>
 
                               </form>

@@ -155,6 +155,7 @@ Paket Akad Benjalur WO
                                         <button class="btn btn-primary tn-block gradient-custom-2" data-bs-toggle="modal" data-bs-target="#basicModal" type="submit">pesan sekarang</button>
                                         <button class="btn btn-primary tn-block gradient-custom-2" type="submit">chat me</button>
                                     </div>
+                                    @auth
                                     <div class="modal fade" id="basicModal" tabindex="-1">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -209,6 +210,22 @@ Paket Akad Benjalur WO
                                             </div>
                                         </div>
                                     </div>
+                                    @else
+                                    <div class="modal fade" id="basicModal" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                <div class="container">
+                                                    <div class="card justify-content-center align-items-center p-4 mb-3">
+                                                        <h4>Silahkan Login terlebih dahulu</h4>
+                                                        <a href="/login" class="btn btn-primary gradient-custom-2 w-25 m-3">Login</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    @endauth
                                 </div>
                             </div>
                         </div>

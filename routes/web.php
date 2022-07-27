@@ -24,28 +24,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('guest');
-Route::post('/logout', [LoginController::class, 'logout']);
-Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
-Route::post('/register', [RegisterController::class, 'store']);
 
-Route::view('/wedding', 'pages.wedding-org');
-Route::view('/dashboard', 'pages.dashboard');
-Route::view('/belanjur-wo', 'pages.belanjur.benjalur-wo');
-Route::view('/paket-akad', 'pages.belanjur.paket-akad');
-Route::view('/ayodiya-wo', 'pages.ayodiya.ayodiya-wo');
-Route::view('/janur-kuning-wo', 'pages.janur kuning.janur-kuning-wo');
-Route::view('/detail-order', 'pages.detail-order');
+    Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+    Route::post('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('guest');
+    Route::post('/logout', [LoginController::class, 'logout']);
+    Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
+    Route::post('/register', [RegisterController::class, 'store']);
+    
+    Route::view('/wedding', 'pages.client.wedding-org');
+    Route::view('/all-paket', 'pages.client.all-paket');
+    Route::view('/detail-wo', 'pages.client.detail-wo');
+    Route::view('/paket-akad', 'pages.client.paket-akad');
+    Route::view('/profil-client', 'pages.client.profil-client');
+    Route::view('/upgrade', 'pages.client.upgrade');
+    Route::get('/', function () {
+        return view('pages.dashboard');
+    });
 
 
-
-    Route::view('/wedding', 'pages.wedding-org');
-    Route::view('/dashboard', 'pages.dashboard');
-    Route::view('/belanjur-wo', 'pages.belanjur.benjalur-wo');
-    Route::view('/paket-akad', 'pages.belanjur.paket-akad');
-    Route::view('/ayodiya-wo', 'pages.ayodiya.ayodiya-wo');
-    Route::view('/janur-kuning-wo', 'pages.janur kuning.janur-kuning-wo');
    
 
 Route::group(['middleware' => ['auth','level:superAdmin']],function(){
@@ -61,12 +57,9 @@ Route::group(['middleware' => ['auth','level:superAdmin']],function(){
 });
 
 Route::group(['middleware' => ['auth','level:client']],function(){
-    Route::get('/', function () {
-        return view('pages.dashboard');
-    });
 
-    Route::view('/detail-order', 'pages.detail-order');
-    Route::view('/invoice', 'pages.invoice');
+    Route::view('/detail-order', 'pages.client.detail-order');
+    Route::view('/invoice', 'pages.client.invoice');
     
     
 });
@@ -79,6 +72,8 @@ Route::group(['middleware' => ['auth','level:Admin']],function(){
 
     Route::get('/passwordUpdate', [UpdatePasswordController::class, 'edit'])->name('passwordUpdate');
     Route::put('/passwordUpdate', [UpdatePasswordController::class, 'update']);
+
+    Route::view('/pesanan', 'pages.admin.pesanan');
     Route::controller(PaketController::class)->group(function () {
         Route::get('/paketwo', 'index');
         Route::get('/paket', 'create');

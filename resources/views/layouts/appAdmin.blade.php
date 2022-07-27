@@ -137,6 +137,15 @@
 								<span class="nav-link-text">profil</span>
 							</a>
 						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/pesanan">
+								<span class="nav-icon">
+									<i class="fa-solid fa-cart-shopping"></i>
+								</span>
+								<span class="nav-link-text">Pesanan</span>
+							</a>
+						</li>
 						
 					@endcan
 						
