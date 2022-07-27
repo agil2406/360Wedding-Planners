@@ -32,7 +32,7 @@ Wedding Organizer
                                 <i class="fa-solid fa-star-half"></i>
                                 3/5
                             </p>
-                            <a href="/belanjur-wo" class="btn btn-primary tn-block gradient"> Daftar paket</a>
+                            <a href="/detail-wo" class="btn btn-primary tn-block gradient"> Daftar paket</a>
                         </div>
                     </div>
                 </div>

@@ -16,6 +16,14 @@
 	<!-- Favicons -->
 	@include('includes.styling')
 	<link rel="stylesheet" href="{{url('frontend/assets/css/portal.css')}}">
+	<link rel="stylesheet" href="{{url('frontend/assets/vendors/mdi/css/materialdesignicons.min.css')}}">
+	<link rel="stylesheet" href="{{url('frontend/assets/vendors/css/vendor.bundle.base.css')}}">
+	<link href="{{ url('frontend/assets/vendors/mdi/css/materialdesignicons.min.css') }}" rel="stylesheet">
+	<!-- endinject -->
+	<!-- Plugin css for this page -->
+	<link rel="stylesheet" href="{{url('frontend/assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
+	<link rel="stylesheet" href="{{url('frontend/assets/vendors/jvectormap/jquery-jvectormap.css')}}">
+
 
 
 </head>
@@ -47,7 +55,7 @@
 								</li>
 								<li>
 									<form action="/logout" method="post">
-										@csrf
+									@csrf
 										<button type="submit" class="dropdown-item">
 											<i class="bi bi-box-arrow-right"></i>Sign Out
 										</button>
@@ -78,6 +86,13 @@
 
 				<nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
 					<ul class="app-menu list-unstyled accordion" id="menu-accordion">
+
+
+					@can('admin')
+						
+					
+					
+
 						<li class="nav-item">
 							<a class="nav-link" href="{{url('/dashboardAdmin')}}">
 								<span class="nav-icon">
@@ -85,9 +100,7 @@
 								</span>
 								<span class="nav-link-text">Dashboard</span>
 							</a>
-							<!--//nav-link-->
 						</li>
-						<!--//nav-item-->
 
 						<li class="nav-item">
 							<a class="nav-link " href="{{url('/galery')}}">
@@ -96,9 +109,7 @@
 								</span>
 								<span class="nav-link-text">Galery WO</span>
 							</a>
-							<!--//nav-link-->
 						</li>
-						<!--//nav-item-->
 
 						<li class="nav-item">
 							<a class="nav-link " href="{{url('/paketwo')}}">
@@ -107,9 +118,7 @@
 								</span>
 								<span class="nav-link-text">Paket WO</span>
 							</a>
-							<!--//nav-link-->
 						</li>
-						<!--//nav-item-->
 
 						<li class="nav-item">
 							<a class="nav-link " href="{{url('/profil-wo'.'/'.auth()->user()->wo_id)}}">
@@ -119,6 +128,33 @@
 								<span class="nav-link-text">Tentang WO</span>
 							</a>
 						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/profileUpdate">
+								<span class="nav-icon">
+									<i class="fa-solid fa-person"></i>
+								</span>
+								<span class="nav-link-text">profil</span>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/pesanan">
+								<span class="nav-icon">
+									<i class="fa-solid fa-cart-shopping"></i>
+								</span>
+								<span class="nav-link-text">Pesanan</span>
+							</a>
+						</li>
+						
+					@endcan
+						
+					
+
+						
+						
+
+						
 
 						@can('superAdmin')
 						<li class="nav-item">

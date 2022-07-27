@@ -76,7 +76,7 @@ Dashboard
             <div class="row">
                 <div class="col-md-12 center">
                 <button class="btn btn-primary tn-block gradient-custom-2" type="submit">
-                <a href="/wedding-org" style="text-decoration: none; color:white;" >Lihat Semua Wedding Organizer</a>
+                <a href="/wedding" style="text-decoration: none; color:white;" >Lihat Semua Wedding Organizer</a>
                 </button>
                 </div>
             </div>
