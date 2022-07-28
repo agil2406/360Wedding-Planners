@@ -79,7 +79,7 @@ Paket Akad Benjalur WO
                         </section>
                         <hr>
 
-                        <section class="vendor mt-4">
+                        <section class="profil-vendor mt-4">
                             <div class="container">
                                 <div class="row justify-content-between">
                                     <div class="col-md-8">
@@ -150,10 +150,14 @@ Paket Akad Benjalur WO
                                 <hr>
                                 <p class="small mb-0">kapasitas</p>
                                 <p><b>100 pax</b></p>
-                                <div class="d-flex justify-content-center align-items-center center">
-                                    <div class="justify-content-center align-items-center center mb-3">
-                                        <button class="btn btn-primary tn-block gradient-custom-2" data-bs-toggle="modal" data-bs-target="#basicModal" type="submit">pesan sekarang</button>
-                                        <button class="btn btn-primary tn-block gradient-custom-2" type="submit">chat me</button>
+                                <div class="row mb-3">
+                                    <div class="col-sm-6">
+                                        <button class="btn btn-primary gradient-custom-2 w-100" data-bs-toggle="modal" data-bs-target="#basicModal" type="submit">pesan sekarang</button>
+                                      
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button class="btn btn-secondary  w-100" type="submit">
+                                        <i class="fa-solid fa-comment-dots"></i> chat me</button>
                                     </div>
                                     @auth
                                     <div class="modal fade" id="basicModal" tabindex="-1">
@@ -170,10 +174,10 @@ Paket Akad Benjalur WO
                                                             <div class="card card-galery mb-4">
                                                                 <div class="card-body">
                                                                     <div class="row">
-                                                                        <div class="col-sm-2">
+                                                                        <div class="col-sm-4">
                                                                             <img src="{{url('frontend/assets/img/kiss.jpg')}}" class="rounded-1" width="90px"  alt="" >
                                                                         </div>
-                                                                        <div class="col-sm-9">
+                                                                        <div class="col-sm-8">
                                                                             <p class="mt-1 mb-0">nama paket</p>
                                                                             <p class="small">IDR 5.000.000</p>
                                                                         </div>
@@ -199,7 +203,9 @@ Paket Akad Benjalur WO
                                                                     @enderror
                                                                 </form>
                                                             </div>
-                                                            <a href="/detail-order" class="btn btn-primary tn-block gradient-custom-2 mb-4"> Bayar Lunas - IDR 5,000.000</a>
+                                                            <div class="d-flex justify-content-center">
+                                                            <a href="/detail-order" class="btn btn-primary tn-block gradient-custom-2 mb-4 text-center"> Bayar Lunas - IDR 5,000.000</a>
+                                                            </div>
                                                             
 
 
@@ -223,8 +229,7 @@ Paket Akad Benjalur WO
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                   
+                                    </div>                           
                                     @endauth
                                 </div>
                             </div>

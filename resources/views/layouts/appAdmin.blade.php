@@ -48,7 +48,10 @@
 						<div class="app-utility-item app-user-dropdown dropdown col-auto">
 							<p class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{auth()->user()->name}}</p>
 							<ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
+								@can('admin')
 								<li><a class="dropdown-item" href="{{url('/profil')}}">Profil</a></li>
+								@endcan
+								
 								<li>
 									<hr class="dropdown-divider">
 								</li>

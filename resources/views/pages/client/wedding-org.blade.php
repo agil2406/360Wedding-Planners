@@ -5,12 +5,12 @@ Wedding Organizer
 @endsection
 
 @section('content')
-    <section class="Hero">
+    <section class="vendor">
         
     </section>
 
     <section class="wedding-org mt-4">
-        <div class="container">
+        <div class="container mb-3">
             <div class="row">
                 <div class="col-md-4">
                     <div class="card align-items-center">

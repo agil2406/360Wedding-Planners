@@ -5,15 +5,11 @@ Dashboard
 @endsection
 
 @section('content')
-    <section class="Hero">
-        <div class="row">
-            <div class="jumbotron" >
-                <div class="container">
-                    <h1 class="display-4"> Remember The Moments</h1>
-                </div>
-            </div>
-        </div>
-        
+
+    <section class="home">
+       <div class="container">
+           
+       </div>
     </section>
 
     <section class="organizer">

@@ -17,31 +17,17 @@ Profil saya
     </nav>
 </div>
 <section class="section profile">
-  <div class="row">
-    <div class="col-xl-4">
+  <div class="d-flex justify-content-center ">
+    
+        @if(session()->has('message'))
+          <div class="alert alert-succes alert-dismissible fade show" role="alert">
+            {{session('message')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
+          </button>
+          </div>
+        @endif
 
-      <div class="card">
-        <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-
-          <i class="bi bi-person-circle"></i>
-          <h2>{{auth()->user()->name}}</h2>
-          <h3>{{auth()->user()->level}}</h3>
-         
-        </div>
-      </div>
-
-    </div>
-
-    <div class="col-xl-8">
-    @if(session()->has('message'))
-      <div class="alert alert-succes alert-dismissible fade show" role="alert">
-        {{session('message')}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
-      </button>
-      </div>
-    @endif
-
-      <div class="card">
+      <div class="card card-galery w-75 mx-auto p-3 mb-4">
         <div class="card-body pt-3">
           <!-- Bordered Tabs -->
           <ul class="nav nav-tabs nav-tabs-bordered">
@@ -62,7 +48,6 @@ Profil saya
           <div class="tab-content pt-2">
 
             <div class="tab-pane fade show active profile-overview" id="profile-overview">
-              <h5 class="card-title">About</h5>
               <h5 class="card-title">Profile Details</h5>
 
               <div class="row">
@@ -175,9 +160,9 @@ Profil saya
         </div>
       </div>
 
-    </div>
+  
   </div>
 </section>
-</div>
+
 
 @endsection

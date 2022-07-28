@@ -5,26 +5,11 @@ Benjalur Wedding Organizer
 @endsection
 
 @section('content')
-    <section class="Hero">
-        <div class="row align-items-center">
-            <div class="jumbotron3" >
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-10 paket mt-150 center">
-                            <div class="display-4">
-                                <p>Benjalur</p>
-                                <p>Weeding Organizer</p>
-                            </div>
-                        </div>
-                        <div class="col-md-1"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="detail-vendor">
+      
     </section>
 
-    <section class="about-us">
+    <section class="about-us mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">

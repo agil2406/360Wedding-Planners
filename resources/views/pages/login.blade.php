@@ -11,7 +11,7 @@
     @include('includes.styling')
     <title>Login</title>
   </head>
-  <body class="jumbotron" >
+  <body >
   @include('includes.navbar')
 
 <section class="login">
@@ -56,33 +56,40 @@
                           <div class="tab-content pt-2">
 
                             <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                              <div class="row">
-                                  <div class="col-md-6">
-                                    <button class="btn btn-primary tn-block gradient-custom-2 w-100" type="submit"><i class="fa-brands fa-google"></i> Google</button>
-                                  </div>
-                                  <div class="col-md-6">
-                                    <button class="btn btn-primary tn-block gradient w-100" type="submit"><i class="fa-brands fa-facebook-f"></i> Facebook</button>
-                                  </div>
-                              </div>
                               <div class="row mt-2">
                                   <div class="col-md-12">
                                       <form action="/login"  method="post">
                                       @csrf
-                                        <label for="email" class="form-label @error('email') is-invalid @enderror">Masukkan Email</label>       
-                                        <input type="email" name="email" class="form-control" id="email" required value="{{old('email')}}">
-                                        @error('email')
-                                          <div class="invalid-feedback">
-                                            {{$message}}
+                                        <div class="row">
+                                          <div class="col-md-4">
+                                            <label for="email" class=" col-form-label @error('email') is-invalid @enderror">Masukkan Email</label> 
                                           </div>
-                                        @enderror
-                                        <label for="Password" class="form-label">Password</label>
-                                        <input type="password" name="password" class="form-control" id="password" required>
+                                          <div class="col-md-8">
+                                            <input type="email" name="email" class="form-control" id="email" required value="{{old('email')}}">
+                                            @error('email')
+                                              <div class="invalid-feedback">
+                                                {{$message}}
+                                              </div>
+                                            @enderror
+                                          </div>
+                                        </div>
+                                              
+                                        <div class="row mt-3">
+                                          <div class="col-md-4">
+                                          <label for="Password" class="col-form-label">Password</label>
+                                          </div>
+                                          <div class="col-md-8">
+                                          <input type="password" name="password" class="form-control" id="password" required>
                                         <div class="invalid-feedback">Please enter your password!</div>
-                                        <p class="small d-flex" style="left: 0;">lupa kata sandi ?</p>
-                                        <button class="btn btn-primary tn-block gradient-custom-2" type="submit"> 
-                                          Sign In
+                                          </div>
+                                        </div>
+                                      
+                                        
+                                       
+                                        <button class="btn btn-primary tn-block gradient-custom-2 mb-3 mt-5" style="font-family: 'Inter', sans-serif;" type="submit"> 
+                                          SIGN IN
                                         </button>
-                                        <p class="small">Gunakan akun lain</p>
+                                       
                                       </form>
                                     </div>
                               </div>
@@ -93,7 +100,7 @@
                                   @csrf
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <label for="name" class="col-form-label">Nama Admin</label>
+                                            <label for="name" class="col-form-label">Nama</label>
                                         </div>
                                         <div class="col-md-8">
                                             <input type="text" class="form-control @error ('name') is-invalid @enderror" id="name" name="name" value="{{ old('name')}}" required autofocus>
@@ -138,15 +145,13 @@
 
 
                                     <div class="d-flex justify-content-center">
-                                        <button class="btn btn-primary tn-block gradient-custom-2 center mt-2 mb-2 text-white" type="submit">Sign UP</button>
+                                        <button class="btn btn-primary tn-block gradient-custom-2 center mt-2 mb-2 text-white" type="submit">SIGN UP</button>
                                     </div>
 
                               </form>
                             </div>
 
-                            <div class="tab-pane fade pt-3" id="profile-change-password">
-                            </div>
-
+                           
                           </div>
 
 

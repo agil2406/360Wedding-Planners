@@ -27,8 +27,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=WindSong&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@300&family=WindSong&display=swap" rel="stylesheet">
 
 <style>
   trix-toolbar [data-trix-button-group="file-tools"] {

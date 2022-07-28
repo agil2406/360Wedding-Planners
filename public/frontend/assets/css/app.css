@@ -23,72 +23,49 @@ footer {
 .mt-order {
     margin-top: 100px;
 }
-.jumbotron {
+
+.home {
     background: linear-gradient(135deg, var(--primary), var(--secondary)),
         url("hero.jpg") no-repeat center center / cover;
     height: 700px;
     text-align: center;
 }
-.jumbotron .display-4 {
+.home-title {
     margin-top: 320px;
     font-family: "Alex brush", cursive;
     font-size: 80px;
     color: white;
 }
 
-.hero {
+.button {
+    background: black;
+}
+
+.vendor {
     background: linear-gradient(135deg, var(--primary), var(--secondary)),
-        url("hero.jpg") no-repeat center center / cover;
+        url("../img/prewed.jpg") no-repeat center center / cover;
+    height: 700px;
+    text-align: center;
+}
+.detail-vendor {
+    background: linear-gradient(135deg, var(--primary), var(--secondary)),
+        url("../img/bg-mobil.jpg") no-repeat center center / cover;
+    height: 700px;
+    text-align: center;
+}
+.all-paket {
+    background: linear-gradient(135deg, var(--primary), var(--secondary)),
+        url("../img/janurkuning.jpg") no-repeat center center / cover;
+    height: 700px;
+    text-align: center;
+}
+.login {
+    background: linear-gradient(135deg, var(--primary), var(--secondary)),
+        url("../img/party.jpg") no-repeat center center / cover;
     height: 700px;
     text-align: center;
 }
 
-.jumbotron2 .display-4 {
-    font-size: 50px;
-    margin-top: 150px;
-    color: white;
-    font-weight: 300;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-}
-.jumbotron2 p {
-    margin-left: 5px;
-    font-size: 20px;
-    color: white;
-}
-.jumbotron3 {
-    background: linear-gradient(135deg, var(--primary), var(--secondary)),
-        url("../img/bg-mobil.jpg") no-repeat center center / cover;
-    height: 600px;
-    align-items: center;
-}
-.jumbotron3 .col-md-10 {
-    margin-top: 185px;
-}
-
-.jumbotron3 .display-4 {
-    align-items: center;
-    margin-top: 40px;
-    font-family: "Alex brush", cursive;
-    font-size: 80px;
-    color: white;
-}
-.jumbotron4 {
-    background: linear-gradient(135deg, var(--primary), var(--secondary)),
-        url("../img/wedding2.jpg") no-repeat center center / cover;
-    height: 600px;
-    align-items: center;
-}
-.jumbotron4 .col-md-10 {
-    margin-top: 185px;
-}
-
-.jumbotron4 .display-4 {
-    align-items: center;
-    margin-top: 40px;
-    font-family: "Alex brush", cursive;
-    font-size: 80px;
-    color: white;
-}
 .about-us {
     margin-top: 40px;
 }
@@ -230,14 +207,15 @@ h1 {
 .margin {
     margin-left: auto;
 }
+.navbar {
+    background-color: #e4e2e9;
+}
 .navbar-brand {
     margin-left: 20px;
     font-family: "Grand Hotel", cursive;
     font-size: 100px;
 }
-.navbar {
-    background-color: #e4e2e9;
-}
+
 .center {
     text-align: center;
     align-items: center;
@@ -267,10 +245,21 @@ p i {
     background: #fccb90;
 
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, #5e7496, #3f5f90);
+    background: -webkit-linear-gradient(to right, #86198f, #86197f);
 
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #5e7496, #3f5f90);
+    background: linear-gradient(to right, #86198f, #86197f);
+}
+.gradient:hover {
+    /* fallback for old browsers */
+    font-family: arkhip;
+    background: #fccb90;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #701a75, #701a74);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #701a75, #701a74);
 }
 
 .slider {
@@ -336,15 +325,31 @@ p i {
     background: #fccb90;
 
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, #d8363a, #dd3675, #b44593);
+    background: -webkit-linear-gradient(to right, #c026d3, #a21caf);
 
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #d8363a, #dd3675, #b44593);
+    background: linear-gradient(to right, #c026d3, #a21caf);
 }
+
+.gradient-custom-2:hover {
+    /* fallback for old browsers */
+    background: #fccb90;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #86198f, #a21caf);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #86198f, #a21caf);
+}
+
 .invoice {
     height: 100vh;
     background: linear-gradient(135deg, var(--primary), var(--secondary)),
         url("jumbotron.jpg") no-repeat center center / cover;
+}
+
+label {
+    font-family: "Inter", sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -356,5 +361,14 @@ p i {
     .gradient-custom-2 {
         border-top-right-radius: 0.3rem;
         border-bottom-right-radius: 0.3rem;
+    }
+}
+@media (min-width: 992px) {
+    .nav-item {
+        font-family: "Poppins", sans-serif;
+        text-transform: uppercase;
+    }
+    .nav-item:hover {
+        font-weight: bold;
     }
 }
