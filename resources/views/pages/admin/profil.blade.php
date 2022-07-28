@@ -6,12 +6,12 @@ Profil Wedding Organizer
 
 @section('content')
 <div class="pagetitle">
-    <nav>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{url('/dashboardAdmin')}}">Home</a></li>
-            <li class="breadcrumb-item">Profil</li>
-        </ol>
-    </nav>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{url('/dashboardAdmin')}}">Home</a></li>
+      <li class="breadcrumb-item">Profil</li>
+    </ol>
+  </nav>
 </div>
 
 <section class="section profile">
@@ -24,20 +24,20 @@ Profil Wedding Organizer
           <i class="bi bi-person-circle"></i>
           <h2>{{auth()->user()->name}}</h2>
           <h3>{{auth()->user()->level}}</h3>
-         
+
         </div>
       </div>
 
     </div>
 
     <div class="col-xl-8">
-    @if(session()->has('message'))
+      @if(session()->has('message'))
       <div class="alert alert-succes alert-dismissible fade show" role="alert">
         {{session('message')}}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
-      </button>
+        </button>
       </div>
-    @endif
+      @endif
 
       <div class="card">
         <div class="card-body pt-3">
@@ -91,33 +91,33 @@ Profil Wedding Organizer
                 <div class="row mb-3">
                   <label for="name" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                   <div class="col-md-8 col-lg-9">
-                      <input value="{{old('name', Auth::user()->name)}}" name="name" type="text" class="form-control @error('name') is-invalid  @enderror" id="name"> 
-                      @error("name")
+                    <input value="{{old('name', Auth::user()->name)}}" name="name" type="text" class="form-control @error('name') is-invalid  @enderror" id="name">
+                    @error("name")
                     <div class="invalid-feedback">{{$message}}</div>
-                    @enderror   
+                    @enderror
                   </div>
                 </div>
 
 
                 <div class="row mb-3">
-                    <label for="posisi" class="col-md-4 col-lg-3 col-form-label">Posisi</label>
-                    <div class="col-md-8 col-lg-9">
-                        <input name="posisi" type="text" class="form-control " id="posisi" value="{{old('posisi', Auth::user()->level)}}" readonly>
-                    </div>
+                  <label for="posisi" class="col-md-4 col-lg-3 col-form-label">Posisi</label>
+                  <div class="col-md-8 col-lg-9">
+                    <input name="posisi" type="text" class="form-control " id="posisi" value="{{old('posisi', Auth::user()->level)}}" readonly>
+                  </div>
                 </div>
 
                 <div class="row mb-3">
-                    <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
-                    <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="email" value="{{old('email', Auth::user()->email)}}">
-                    </div>
+                  <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                  <div class="col-md-8 col-lg-9">
+                    <input name="email" type="email" class="form-control" id="email" value="{{old('email', Auth::user()->email)}}">
+                  </div>
                 </div>
 
                 <div class="text-center">
-                <button type="submit" class="btn btn-primary">Save Changes</button>
+                  <button type="submit" class="btn btn-primary text-white">Save Changes</button>
                 </div>
-            </form>
-             
+              </form>
+
               <!-- End Profile Edit Form -->
 
             </div>
@@ -136,7 +136,7 @@ Profil Wedding Organizer
                     <div class="invalid-feedback">{{$message}}</div>
                     @enderror
                   </div>
-                 
+
                 </div>
 
                 <div class="row mb-3">
@@ -145,7 +145,7 @@ Profil Wedding Organizer
                     <input name="password" type="password" class="form-control @error('password') is-invalid  @enderror" id="password">
                   </div>
                   @error("password")
-                    <div class="invalid-feedback">{{$message}}</div>
+                  <div class="invalid-feedback">{{$message}}</div>
                   @enderror
                 </div>
 
@@ -155,15 +155,15 @@ Profil Wedding Organizer
                     <input name="passwordConfirmation" type="password" class="form-control @error('passwordConfirmation') is-invalid  @enderror" id="passwordConfirmation">
                   </div>
                   @error("passwordConfirmation")
-                    <div class="invalid-feedback">{{$message}}</div>
+                  <div class="invalid-feedback">{{$message}}</div>
                   @enderror
                 </div>
 
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Change Password</button>
+                  <button type="submit" class="btn btn-primary text-white">Change Password</button>
                 </div>
               </form>
-             
+
               <!-- End Change Password Form -->
 
             </div>

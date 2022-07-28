@@ -25,26 +25,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-    Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-    Route::post('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('guest');
-    Route::post('/logout', [LoginController::class, 'logout']);
-    Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
-    Route::post('/register', [RegisterController::class, 'store']);
-    
-    Route::view('/wedding', 'pages.client.wedding-org');
-    Route::view('/all-paket', 'pages.client.all-paket');
-    Route::view('/detail-wo', 'pages.client.detail-wo');
-    Route::view('/paket-akad', 'pages.client.paket-akad');
-    Route::view('/profil-client', 'pages.client.profil-client');
-    Route::view('/upgrade', 'pages.client.upgrade');
-    Route::get('/', function () {
-        return view('pages.dashboard');
-    });
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('guest');
+Route::post('/logout', [LoginController::class, 'logout']);
+Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store']);
 
+Route::view('/wedding', 'pages.client.wedding-org');
+Route::view('/all-paket', 'pages.client.all-paket');
+Route::view('/detail-wo', 'pages.client.detail-wo');
+Route::view('/paket-akad', 'pages.client.paket-akad');
+Route::view('/profil-client', 'pages.client.profil-client');
+Route::view('/upgrade', 'pages.client.upgrade');
+Route::get('/', function () {
+    return view('pages.dashboard');
+});
 
-   
-
-Route::group(['middleware' => ['auth','level:superAdmin']],function(){
+Route::group(['middleware' => ['auth', 'level:superAdmin']], function () {
     Route::controller(AdminController::class)->group(function () {
         Route::get('/admin', 'index');
         Route::get('/create-admin', 'create');
@@ -54,21 +51,27 @@ Route::group(['middleware' => ['auth','level:superAdmin']],function(){
         Route::get('/admin/{id}/edit', 'edit');
         Route::get('/admin/{id}', 'show');
     });
+    Route::controller(WoController::class)->group(function () {
+        Route::get('/wo', 'index');
+        Route::get('/create-wo', 'create');
+        Route::post('/wo', 'store');
+        Route::delete('/wo/{id}', 'destroy');
+        Route::put('/wo/{id}', 'update');
+        Route::get('/wo/{id}/edit', 'edit');
+        Route::get('/wo/{id}', 'show');
+    });
 });
 
-Route::group(['middleware' => ['auth','level:client']],function(){
+Route::group(['middleware' => ['auth', 'level:client']], function () {
 
     Route::view('/detail-order', 'pages.client.detail-order');
     Route::view('/invoice', 'pages.client.invoice');
-    
-    
 });
 
+Route::group(['middleware' => ['auth', 'level:Admin']], function () {
 
-Route::group(['middleware' => ['auth','level:Admin']],function(){
-        
-    Route::get('/profileUpdate',[UpdateProfilController::class,'index'])->name('profileUpdate');
-    Route::put('/profileUpdate',[UpdateProfilController::class, 'update']);
+    Route::get('/profileUpdate', [UpdateProfilController::class, 'index'])->name('profileUpdate');
+    Route::put('/profileUpdate', [UpdateProfilController::class, 'update']);
 
     Route::get('/passwordUpdate', [UpdatePasswordController::class, 'edit'])->name('passwordUpdate');
     Route::put('/passwordUpdate', [UpdatePasswordController::class, 'update']);
@@ -83,7 +86,7 @@ Route::group(['middleware' => ['auth','level:Admin']],function(){
         Route::get('/paket/{id}/edit', 'edit');
         Route::delete('/paket/{id}', 'destroy');
     });
-    
+
     Route::controller(GaleryController::class)->group(function () {
         Route::get('/galery', 'index');
         Route::get('/galerytambah', 'create');
@@ -91,15 +94,13 @@ Route::group(['middleware' => ['auth','level:Admin']],function(){
         Route::get('/galery/{id}', 'show');
         Route::delete('/galery/{id}', 'destroy');
     });
-    
+
 
     Route::view('/dashboardAdmin', 'pages.admin.dashboardAdmin');
-    
+
     Route::controller(ProfilController::class)->group(function () {
         Route::get('/profil-wo/{id}', 'index');
         Route::get('/edit-profil-wo/{id}', 'edit');
         Route::put('/profil-wo/{id}', 'update');
     });
-
 });
-
