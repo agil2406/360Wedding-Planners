@@ -48,14 +48,13 @@
 						<div class="app-utility-item app-user-dropdown dropdown col-auto">
 							<p class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{auth()->user()->name}}</p>
 							<ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-								<li><a class="dropdown-item" href="account.html">Account</a></li>
-								<li><a class="dropdown-item" href="settings.html">Settings</a></li>
+								<li><a class="dropdown-item" href="{{url('/profil')}}">Profil</a></li>
 								<li>
 									<hr class="dropdown-divider">
 								</li>
 								<li>
 									<form action="/logout" method="post">
-									@csrf
+										@csrf
 										<button type="submit" class="dropdown-item">
 											<i class="bi bi-box-arrow-right"></i>Sign Out
 										</button>
@@ -88,10 +87,10 @@
 					<ul class="app-menu list-unstyled accordion" id="menu-accordion">
 
 
-					@can('admin')
-						
-					
-					
+						@can('admin')
+
+
+
 
 						<li class="nav-item">
 							<a class="nav-link" href="{{url('/dashboardAdmin')}}">
@@ -134,7 +133,7 @@
 								<span class="nav-icon">
 									<i class="fa-solid fa-person"></i>
 								</span>
-								<span class="nav-link-text">profil</span>
+								<span class="nav-link-text">Profil</span>
 							</a>
 						</li>
 
@@ -146,15 +145,15 @@
 								<span class="nav-link-text">Pesanan</span>
 							</a>
 						</li>
-						
-					@endcan
-						
-					
 
-						
-						
+						@endcan
 
-						
+
+
+
+
+
+
 
 						@can('superAdmin')
 						<li class="nav-item">
