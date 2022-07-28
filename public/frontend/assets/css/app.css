@@ -36,10 +36,11 @@ footer {
     color: white;
 }
 
-.jumbotron2 {
+.hero {
     background: linear-gradient(135deg, var(--primary), var(--secondary)),
-        url("jumbotron.jpg") no-repeat center center / cover;
-    height: 600px;
+        url("hero.jpg") no-repeat center center / cover;
+    height: 700px;
+    text-align: center;
 }
 
 .jumbotron2 .display-4 {

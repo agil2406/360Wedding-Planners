@@ -6,14 +6,7 @@ Wedding Organizer
 
 @section('content')
     <section class="Hero">
-        <div class="row">
-            <div class="jumbotron2" >
-                <div class="container">
-                    <h1 class="display-4"> Wedding Organizer</h1>
-                    <p>Temukan wedding organizer pilihan anda</p>
-                </div>
-            </div>
-        </div>
+        
     </section>
 
     <section class="wedding-org mt-4">

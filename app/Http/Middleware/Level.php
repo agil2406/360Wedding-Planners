@@ -22,7 +22,7 @@ class Level
             return $next($request);
         }
         if (Auth::user()->level == 'client'){
-            return Redirect::to('/dashboard');
+            return Redirect::to('/');
         } elseif (Auth::user()->level == 'Admin'){
             return Redirect::to('/dashboardAdmin');
         } elseif (Auth::user()->level == 'superAdmin'){
