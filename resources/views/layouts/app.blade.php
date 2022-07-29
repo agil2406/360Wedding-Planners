@@ -15,11 +15,11 @@
 </head>
 
 <body>
-  @include('includes.navbar')
+ 
 
 
   <main id="main" class="main">
-
+    @include('includes.navbar')
     @yield('content')
 
   </main><!-- End #main -->

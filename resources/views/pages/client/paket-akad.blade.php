@@ -131,32 +131,51 @@ Paket Akad Benjalur WO
                         
                         <div class="card card-galery">
                             <div class="container">
-                                <div class="row">
-                                    <div class="col-md-12 mr-3 mt-3">
-                                        <p>harga</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <div class="">
+                                        <p class="p-1 mb-0">harga</p>
+                                    </div>
+                                    <div class="d-flex w-50 justify-content-center rounded-pill text-white" style="background-color: coral;">
+                                    
+                                        <p class="text-center mb-0 p-1"> <i class="fa-solid fa-star-sharp"></i>Harga terbaik</p>
                                     </div>
                                 </div>
-                                <div class="row justify-content-center center">
-                                    <div class="col-md-3 text-center center" style="background-color: salmoon ;">
-                                        <p class="mb-0 small text-center">Hemat</p>
+                                <div class="d-flex">
+                                    <div class="align-items-center px-3 rounded-3 text-white" style="background-color: coral;">       
+                                        <p class="mb-0 mt-2">Hemat</p>
                                         <p>5000k</p>
 
                                     </div>
-                                    <div class="col-md-9">
-                                        <p class="mb-0" style="text-decoration: line-through;">IDR 52.000.000,00</p>
+                                    <div class="harga justify-content-center align-items-center my-auto">
+                                        <p class="mb-0 mt-2" style="text-decoration: line-through;">IDR 52.000.000,00</p>
                                         <p><b>IDR 5.000.000,00</b></p>
                                     </div>
                                 </div>
                                 <hr>
                                 <p class="small mb-0">kapasitas</p>
                                 <p><b>100 pax</b></p>
-                                <div class="row mb-3">
+                                
+                            </div>
+                        </div>
+
+                        <div class="card card-galery mt-2">
+                            <div class="container">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="mt-3">jumlah</p>
+                                    <form action="" class="w-25">
+                                        <input type="number" class="form-control" name="sb_bi">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="row mb-3 mt-3">
                                     <div class="col-sm-6">
-                                        <button class="btn btn-primary gradient-custom-2 w-100" data-bs-toggle="modal" data-bs-target="#basicModal" type="submit">pesan sekarang</button>
+                                        <button class="btn btn-primary gradient-custom-2 w-100" data-bs-toggle="modal" data-bs-target="#basicModal" type="submit">Order Now</button>
                                       
                                     </div>
                                     <div class="col-sm-6">
-                                        <button class="btn btn-secondary  w-100" type="submit">
+                                        <button class="btn btn-outline-secondary  w-100" type="submit">
                                         <i class="fa-solid fa-comment-dots"></i> chat me</button>
                                     </div>
                                     @auth
@@ -231,17 +250,7 @@ Paket Akad Benjalur WO
                                         </div>
                                     </div>                           
                                     @endauth
-                                </div>
                             </div>
-                        </div>
-
-                        <div class="card card-galery">
-                            <div class="container">
-                                <div class="row">
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

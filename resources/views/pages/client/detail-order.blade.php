@@ -6,6 +6,7 @@ Dashboard
 
 @section('content')
    
+
 <div class="container mt-order">
     <div class="title">
         <h3 class="text-center">Rangkuman Pembayaran</h3>
@@ -57,5 +58,6 @@ Dashboard
 
     </div>
 </div>
+</section>
  
 @endsection

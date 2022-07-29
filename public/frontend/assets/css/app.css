@@ -44,8 +44,14 @@ footer {
 .vendor {
     background: linear-gradient(135deg, var(--primary), var(--secondary)),
         url("../img/prewed.jpg") no-repeat center center / cover;
-    height: 700px;
+    height: 800px;
     text-align: center;
+}
+.vendor h3 {
+    font-size: 34px;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    font-weight: bold;
 }
 .detail-vendor {
     background: linear-gradient(135deg, var(--primary), var(--secondary)),
@@ -62,6 +68,12 @@ footer {
 .login {
     background: linear-gradient(135deg, var(--primary), var(--secondary)),
         url("../img/party.jpg") no-repeat center center / cover;
+    height: 700px;
+    text-align: center;
+}
+.ordered {
+    background: linear-gradient(135deg, var(--primary), var(--secondary)),
+        url("../img/prewed.jpg") no-repeat center center / cover;
     height: 700px;
     text-align: center;
 }
@@ -182,6 +194,7 @@ h1 {
     background: #fff;
     border-radius: 5px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    font-family: "Inter", sans-serif;
 }
 .contact-us h4 {
     font-family: arkhip;
@@ -350,6 +363,12 @@ p i {
 
 label {
     font-family: "Inter", sans-serif;
+}
+
+.harga {
+    margin-left: 10px;
+    align-items: center;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
