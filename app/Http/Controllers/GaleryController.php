@@ -27,6 +27,7 @@ class GaleryController extends Controller
     {
         $validateData = $request->validate([
             'nama_foto' => 'required',
+            'wo_id' => 'required',
             'image' => 'image|file|max:5120',
             'deskripsi' => 'required'
         ]);

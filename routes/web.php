@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -31,16 +32,22 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::view('/wedding', 'pages.client.wedding-org');
 Route::view('/all-paket', 'pages.client.all-paket');
 Route::view('/detail-wo', 'pages.client.detail-wo');
 Route::view('/paket-akad', 'pages.client.paket-akad');
 Route::view('/profil-client', 'pages.client.profil-client');
 Route::view('/upgrade', 'pages.client.upgrade');
-Route::get('/', function () {
-    return view('pages.dashboard');
-});
 
+
+Route::controller(ClientController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/detail-paket', 'show');
+    Route::get('//wedding', 'vendor');
+    Route::delete('/admin/{id}', 'destroy');
+    Route::put('/admin/{id}', 'update');
+    Route::get('/admin/{id}/edit', 'edit');
+    Route::get('/admin/{id}', 'show');
+});
 Route::group(['middleware' => ['auth', 'level:superAdmin']], function () {
     Route::controller(AdminController::class)->group(function () {
         Route::get('/admin', 'index');

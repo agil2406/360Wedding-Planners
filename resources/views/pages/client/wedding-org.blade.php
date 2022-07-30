@@ -5,66 +5,36 @@ Wedding Organizer
 @endsection
 
 @section('content')
-    <section class="vendor">
-        
-    </section>
+<section class="vendor">
 
-    <section class="wedding-org mt-4">
-        <div class="container mb-3">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card align-items-center">
-                        <img src="{{url('frontend/assets/img/wedding.jpg')}}" width="200px" height="200" class="rounded-circle mt-3"  alt="">
-                        <div class="card-body center">
-                            <h5 class="card-title">Belanjur Wedding Organizer</h5>
-                            <p class="card-text"><b>Lombok, ID</b></p>
-                            <p>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star-half"></i>
-                                3/5
-                            </p>
-                            <a href="/detail-wo" class="btn btn-primary tn-block gradient"> Daftar paket</a>
+</section>
+
+<section class="wedding-org mt-4">
+    <div class="container mb-3">
+        <div class="row row-cols-1 row-cols-md-3">
+            @foreach ($wo as $wo)
+            <div class="col center my-2">
+                <div class="card-group">
+                    <div class="card pt-2">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <img src="{{url('storage'.'/'.$wo->image)}}" class="card-img-top rounded-circle border border-1" alt="" height="160" width="160">
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card align-items-center">
-                        <img src="{{url('frontend/assets/img/party.jpg')}}" width="200px" height="200" class="rounded-circle mt-3"  alt="">
-                        <div class="card-body center">
-                            <h5 class="card-title">Ayodiya Wedding Organizer</h5>
-                            <p class="card-text"><b>Lombok, ID</b></p>
-                            <p>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star-half"></i>
-                                3/5
-                            </p>
-                            <a href="/ayodiya-wo" class="btn btn-primary tn-block gradient"> Daftar paket</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card align-items-center">
-                        <img src="{{url('frontend/assets/img/potrait.jpg')}}" width="200px" height="200" class="rounded-circle mt-3"  alt="">
-                        <div class="card-body center">
-                            <h5 class="card-title">Janur Kuning Wedding Organizer</h5>
-                            <p class="card-text"><b>Lombok, ID</b></p>
-                            <p>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star-half"></i>
-                                3/5
-                            </p>
-                            <a href="/janur-kuning-wo" class="btn btn-primary tn-block gradient"> Daftar paket</a>
+                        <div class="card-body">
+                            <h5 class="card-title center">{{$wo->nama_wo}}</h5>
+                            <p class="card-text">Lombok, ID</p>
+                            @for ($i = 0; $i < 3; $i++) <i class="fa fa-star checked"></i>@endfor
+                                <div class="row my-2">
+                                    <div class="justify-content-center">
+                                        <a href="/janur-kuning-wo" class="btn btn-primary tn-block gradient"> Daftar paket</a>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
-    </section>
+    </div>
+</section>

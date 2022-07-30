@@ -75,9 +75,20 @@ Detail Paket
                             <div class="col-md-2">
                                 <label for="lokasi" class="col-form-label">Lokasi <br> (Gedung) </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-3">
                                 <input type="text" class="form-control @error ('lokasi') is-invalid @enderror" id="lokasi" name="lokasi" value="{{ $data->lokasi}}" readonly>
                                 @error('lokasi')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="col-md-2">
+                                <label for="entertain" class="col-form-label">Entertain</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control @error ('entertain') is-invalid @enderror" id="entertain" name="entertain" value="{{ $data->entertain}}" readonly>
+                                @error('entertain')
                                 <div class="invalid-feedback">
                                     {{$message}}
                                 </div>
@@ -89,9 +100,20 @@ Detail Paket
                             <div class="col-md-2">
                                 <label for="cathering" class="col-form-label">Catering </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-3">
                                 <input type="text" class="form-control @error ('catering') is-invalid @enderror" id="catering" name="catering" value="{{ $data->catering}}" readonly>
                                 @error('catering')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="col-md-2">
+                                <label for="dekorasi" class="col-form-label">Dekorasi </label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control @error ('dekorasi') is-invalid @enderror" id="dekorasi" name="dekorasi" value="{{ $data->dekorasi}}" readonly>
+                                @error('dekorasi')
                                 <div class="invalid-feedback">
                                     {{$message}}
                                 </div>
@@ -103,9 +125,20 @@ Detail Paket
                             <div class="col-md-2">
                                 <label for="mua" class="col-form-label">MUA </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-3">
                                 <input type="text" class="form-control @error ('mua') is-invalid @enderror" id="mua" name="mua" value="{{$data->mua}}" readonly>
                                 @error('mua')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="col-md-2">
+                                <label for="mc" class="col-form-label">MC </label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control @error ('mc') is-invalid @enderror" id="mc" name="mc" value="{{$data->mc}}" readonly>
+                                @error('mc')
                                 <div class="invalid-feedback">
                                     {{$message}}
                                 </div>

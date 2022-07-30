@@ -34,3 +34,8 @@
     display: none;
   }
 </style>
+<style>
+  .checked {
+    color: orange;
+  }
+</style>

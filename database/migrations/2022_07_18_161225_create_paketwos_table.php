@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('lokasi', 191)->nullable();
             $table->string('catering', 191)->nullable();
             $table->string('mua', 191)->nullable();
+            $table->string('dekorasi', 191)->nullable();
+            $table->string('mc', 191)->nullable();
+            $table->string('entertain', 191)->nullable();
             $table->longText('deskripsi', 191)->nullable();
             $table->foreignId('wo_id')->nullable();
             $table->timestamps();

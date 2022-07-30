@@ -51,10 +51,7 @@
 								@can('admin')
 								<li><a class="dropdown-item" href="{{url('/profil')}}">Profil</a></li>
 								@endcan
-								
-								<li>
-									<hr class="dropdown-divider">
-								</li>
+
 								<li>
 									<form action="/logout" method="post">
 										@csrf
@@ -201,31 +198,26 @@
 	</header>
 	<!--//app-header-->
 
-	<div class="app-wrapper">
 
-		<div class="app-content pt-3 p-md-3 p-lg-4">
-			<div class="container-xl">
 
-				<main id="main" class="main">
+	<main id="main" class="main">
+		<div class="app-wrapper">
 
+			<div class="app-content pt-3 p-md-3 p-lg-4">
+				<div class="container-xl">
 					@yield('content')
-				</main>
+				</div>
 
 			</div>
 
 		</div>
+	</main>
 
-		<footer id="footer" class="footer">
-			<div class="copyright">
-				&copy; Copyright <strong><span>360</span></strong> 2022
-			</div>
-			<div class="credits">
-			</div>
-		</footer>
 
-	</div>
 	<!--//app-content-->
 
+
+	@include('includes.footer')
 	@include('includes.script2')
 
 

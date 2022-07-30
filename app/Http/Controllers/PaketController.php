@@ -17,7 +17,7 @@ class PaketController extends Controller
 
     public function create()
     {
-        $wo = WO::where('wo_id', auth()->user()->wo_id)->get();
+        $wo = WO::where('id', auth()->user()->wo_id)->get();
         return view('pages.admin.create-paket', compact(['wo']));
     }
 
@@ -28,10 +28,6 @@ class PaketController extends Controller
             'wo_id' => 'required',
             'nama_paket' => 'required',
             'harga' => 'required',
-            'kapasitas' => 'required',
-            'lokasi' => 'required',
-            'catering' => 'required',
-            'mua' => 'required',
             'deskripsi' => 'required'
         ]);
         PaketWO::create($validateData);

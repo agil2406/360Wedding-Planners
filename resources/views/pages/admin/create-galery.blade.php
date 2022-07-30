@@ -62,6 +62,7 @@ Tambah Galery
                                 @enderror
                             </div>
                         </div>
+                        <input id="wo_id" type="hidden" name="wo_id" value="{{auth()->user()->wo_id}}" hidden>
                         <div class="d-flex align-items-center">
                             <button class="btn btn-primary tn-block gradient-custom-2 center mt-2 mb-2 text-white" type="submit">Tambah Foto</button>
                         </div>
