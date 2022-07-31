@@ -7,10 +7,16 @@ Dashboard
 @section('content')
 
 <section class="home">
-    <div class="container">
-        <div class="row">
-            <div class="center">
-                <p>360 Wedding Planner</p>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
             </div>
         </div>
     </div>
@@ -33,7 +39,7 @@ Dashboard
                     <div class="card pt-2">
                         <div class="row justify-content-center">
                             <div class="col-md-6">
-                                <img src="{{url('storage'.'/'.$wo->image)}}" class="card-img-top rounded-circle border border-1" alt="" height="160" width="160">
+                                <img src="{{url('storage'.'/'.$wo->image)}}" class="card-img-top" alt="" height="160" width="160">
                             </div>
                         </div>
                         <div class="card-body">
