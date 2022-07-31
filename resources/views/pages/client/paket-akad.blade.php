@@ -49,14 +49,7 @@ Paket Akad
 
                     <section class="detail mt-4">
                         <div class="row">
-                            <div class="container">
-                                <h3>{{$paket->nama_paket}}</h3>
-                                <div class="pesan">
-                                    <p class="full">
-                                        {!!$paket->deskripsi!!}
-                                    </p>
-                                </div>
-                            </div>
+                            
                         </div>
                     </section>
                     <hr>
@@ -117,20 +110,17 @@ Paket Akad
                                 <div class="">
                                     <p class="p-1 mb-0">harga</p>
                                 </div>
-                                <div class="d-flex w-50 justify-content-center rounded-pill text-white" style="background-color: coral;">
-
-                                    <p class="text-center mb-0 p-1"> <i class="fa-solid fa-star-sharp"></i>Harga terbaik</p>
-                                </div>
+                               
                             </div>
                             <div class="d-flex">
-                                <div class="align-items-center px-3 rounded-3 text-white" style="background-color: coral;">
-                                    <p class="mb-0 mt-2">Hemat</p>
+                                <div class="align-items-center px-3 rounded-3 text-white price" >
+                                    <p class="mb-0 mt-2 text-center text-white"><i class="bi bi-gem text-white" ></i></p>
                                     <p>5000k</p>
 
                                 </div>
-                                <div class="harga justify-content-center align-items-center my-auto">
-                                    <p class="mb-0 mt-2" style="text-decoration: line-through;">IDR 52.000.000,00</p>
-                                    <p><b>IDR 5.000.000,00</b></p>
+                                <div class="harga my-auto">
+                                    <p class="mt-2 mb-0"><b>paket akad</b></p>
+                                    <p class=""><b>IDR 5.000.000,00</b></p>
                                 </div>
                             </div>
                             <hr>
@@ -237,7 +227,8 @@ Paket Akad
             </div>
         </div>
     </div>
-    <hr>
+   
+    <div class="container">
     <section class="dashboard-paket mt-5">
         <div class="row">
             <div class="col-md-12">
@@ -292,6 +283,7 @@ Paket Akad
         </div>
 
     </section>
+    </div>
 </section>
 
 @endsection

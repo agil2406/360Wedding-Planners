@@ -6,7 +6,7 @@ Profil saya
 
 @section('content')
 
-
+<section class="profile">
 <div class="container">
   <div class="pagetitle mt-order">
       <nav>
@@ -16,7 +16,7 @@ Profil saya
           </ol>
       </nav>
   </div>
-  <section class="section profile">
+  <section class="">
     <div class="d-flex justify-content-center ">
       
           @if(session()->has('message'))
@@ -164,5 +164,6 @@ Profil saya
     </div>
   </section>
 </div>
+</section>
 
 @endsection

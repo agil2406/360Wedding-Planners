@@ -8,9 +8,9 @@ Dashboard
 
 <section class="home">
     <div class="container">
-        <div class="row">
-            <div class="center">
-                <p>360 Wedding Planner</p>
+        <div class="row mt-5">
+            <div class="home-title mt-5">
+                <p class="mt-5">360 Wedding Planner</p>
             </div>
         </div>
     </div>

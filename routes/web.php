@@ -37,6 +37,7 @@ Route::view('/detail-wo', 'pages.client.detail-wo');
 Route::view('/paket-akad', 'pages.client.paket-akad');
 Route::view('/profil-client', 'pages.client.profil-client');
 Route::view('/upgrade', 'pages.client.upgrade');
+Route::view('/rating', 'pages.client.rating');
 
 
 Route::controller(ClientController::class)->group(function () {

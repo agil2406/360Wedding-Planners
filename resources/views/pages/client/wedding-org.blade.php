@@ -6,7 +6,13 @@ Wedding Organizer
 
 @section('content')
 <section class="vendor">
-
+    <div class="container">
+        <div class="row mt-5">
+            <div class="home-title mt-5">
+                <p class="mt-5">Wedding Organizer</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="wedding-org mt-4">

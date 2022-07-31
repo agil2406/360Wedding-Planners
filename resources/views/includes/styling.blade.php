@@ -1,8 +1,10 @@
+
 <link href="{{ url('frontend/assets/css/app.css') }}" rel="stylesheet">
 
 <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css
 " rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
 <link href="{{ url('frontend/assets/css/owl.corousel.min.css') }}" rel="stylesheet">
 <link href="{{ url('frontend/assets/css/owl2.corousel.min.css') }}" rel="stylesheet">
