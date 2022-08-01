@@ -13,7 +13,7 @@ class ClientController extends Controller
     public function index()
     {
         $wo = WO::all();
-        $paket = PaketWO::join('galeries', 'paketwos.wo_id', '=', 'galeries.id')->get();
+        $paket = PaketWO::join('galeries', 'galeries.id', 'paketwos.id')->get();
         $galery = Galery::inRandomOrder()->limit(4)->get();
         return view('pages.dashboard', compact(['wo', 'paket', 'galery']));
     }
@@ -22,6 +22,13 @@ class ClientController extends Controller
         $wo = WO::all();
         $galery = Galery::inRandomOrder()->limit(4)->get();
         return view('pages.client.wedding-org', compact(['wo', 'galery']));
+    }
+    public function detailwo($id)
+    {
+        $wo = WO::find($id);
+        $galery = Galery::where('wo_id', $id)->get();
+        $paket = PaketWO::join('galeries', 'galeries.id', 'paketwos.id')->get();
+        return view('pages.client.detail-wo', compact(['wo', 'galery', 'paket']));
     }
 
 
@@ -36,10 +43,10 @@ class ClientController extends Controller
     }
 
 
-    public function show()
+    public function show($id)
     {
         $wo = WO::all();
-        $paket = PaketWO::find(1);
+        $paket = PaketWO::find($id);
         return view('pages.client.paket-akad', compact(['wo', 'paket']));
     }
 

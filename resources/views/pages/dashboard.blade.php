@@ -7,7 +7,7 @@ Dashboard
 @section('content')
 
 <section class="home">
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <<<<<<< HEAD <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="..." class="d-block w-100" alt="...">
@@ -17,9 +17,15 @@ Dashboard
             </div>
             <div class="carousel-item">
                 <img src="..." class="d-block w-100" alt="...">
-            </div>
-        </div>
-    </div>
+                =======
+                <div class="container">
+                    <div class="row mt-5">
+                        <div class="home-title mt-5">
+                            <p class="mt-5">360 Wedding Planner</p>
+                            >>>>>>> 3b64638fc4951116edec5476cfe0cded20aa34d7
+                        </div>
+                    </div>
+                </div>
 </section>
 
 <section class="organizer">
@@ -39,7 +45,7 @@ Dashboard
                     <div class="card pt-2">
                         <div class="row justify-content-center">
                             <div class="col-md-6">
-                                <img src="{{url('storage'.'/'.$wo->image)}}" class="card-img-top" alt="" height="160" width="160">
+                                <img src="{{url('storage'.'/'.$wo->image)}}" class="card-img-top rounded-circle border border-1" alt="" height="160" width="160">
                             </div>
                         </div>
                         <div class="card-body">

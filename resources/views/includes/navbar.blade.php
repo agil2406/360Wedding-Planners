@@ -26,8 +26,8 @@
             {{auth()->user()->name}}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="/profil-client">profil</a></li>
-            <li><a class="dropdown-item" href="/pesanan">pesanan saya</a></li>
+            <li><a class="dropdown-item" href="/profil-client">Profil</a></li>
+            <li><a class="dropdown-item" href="/pesanan">Pesanan Saya</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -35,7 +35,7 @@
               <form action="/logout" method="post">
                 @csrf
                 <button type="submit" class="dropdown-item">
-                  <i class="bi bi-box-arrow-right"></i>Sign Out
+                  <i class="bi bi-box-arrow-right mr-2">Sign Out</i>
                 </button>
               </form>
             </li>

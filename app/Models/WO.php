@@ -14,4 +14,8 @@ class WO extends Model
     {
         return $this->hasMany(PaketWO::class);
     }
+    public function galery()
+    {
+        return $this->hasMany(Galery::class);
+    }
 }

@@ -37,11 +37,13 @@ Route::view('/detail-wo', 'pages.client.detail-wo');
 Route::view('/paket-akad', 'pages.client.paket-akad');
 Route::view('/profil-client', 'pages.client.profil-client');
 Route::view('/upgrade', 'pages.client.upgrade');
+Route::view('/rating', 'pages.client.rating');
 
 
 Route::controller(ClientController::class)->group(function () {
     Route::get('/', 'index');
-    Route::get('/detail-paket', 'show');
+    Route::get('/detail-wo/{id}', 'detailwo');
+    Route::get('/detail-paket/{id}', 'show');
     Route::get('//wedding', 'vendor');
     Route::delete('/admin/{id}', 'destroy');
     Route::put('/admin/{id}', 'update');
@@ -89,7 +91,7 @@ Route::group(['middleware' => ['auth', 'level:Admin']], function () {
         Route::get('/paket', 'create');
         Route::post('/paket', 'store');
         Route::get('/paket/{id}', 'show');
-        Route::put('/paket/{id}/update', 'update');
+        Route::put('/paketupdate/{id}', 'update');
         Route::get('/paket/{id}/edit', 'edit');
         Route::delete('/paket/{id}', 'destroy');
     });

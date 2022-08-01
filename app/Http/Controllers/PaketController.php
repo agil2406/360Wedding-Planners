@@ -30,7 +30,19 @@ class PaketController extends Controller
             'harga' => 'required',
             'deskripsi' => 'required'
         ]);
-        PaketWO::create($validateData);
+        PaketWO::create([
+            'wo_id' => $request->wo_id,
+            'nama_paket' => $request->nama_paket,
+            'harga' => $request->harga,
+            'deskripsi' => $request->deskripsi,
+            'mua' => $request->mua,
+            'mc' => $request->mc,
+            'dekorasi' => $request->dekorasi,
+            'entertain' => $request->entertain,
+            'catering' => $request->catering,
+            'lokasi' => $request->lokasi,
+            'kapasitas' => $request->kapasitas
+        ]);
         return redirect('/paketwo')->with('success', 'Data berhasil di tambahkan');
     }
 
@@ -55,14 +67,22 @@ class PaketController extends Controller
             'wo_id' => 'required',
             'nama_paket' => 'required',
             'harga' => 'required',
-            'kapasitas' => 'required',
-            'lokasi' => 'required',
-            'catering' => 'required',
-            'mua' => 'required',
             'deskripsi' => 'required'
         ]);
         $paket = PaketWO::find($id);
-        $paket->update($validateData);
+        $paket->update([
+            'wo_id' => $request->wo_id,
+            'nama_paket' => $request->nama_paket,
+            'harga' => $request->harga,
+            'deskripsi' => $request->deskripsi,
+            'mua' => $request->mua,
+            'mc' => $request->mc,
+            'dekorasi' => $request->dekorasi,
+            'entertain' => $request->entertain,
+            'catering' => $request->catering,
+            'lokasi' => $request->lokasi,
+            'kapasitas' => $request->kapasitas
+        ]);
         return redirect('/paketwo')->with('success', 'Data berhasil di ubah');
     }
 

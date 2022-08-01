@@ -6,7 +6,13 @@ Wedding Organizer
 
 @section('content')
 <section class="vendor">
-
+    <div class="container">
+        <div class="row mt-5">
+            <div class="home-title mt-5">
+                <p class="m-5">Wedding Organizer</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="wedding-org mt-4">
@@ -27,7 +33,7 @@ Wedding Organizer
                             @for ($i = 0; $i < 3; $i++) <i class="fa fa-star checked"></i>@endfor
                                 <div class="row my-2">
                                     <div class="justify-content-center">
-                                        <a href="/janur-kuning-wo" class="btn btn-primary tn-block gradient"> Daftar paket</a>
+                                        <a href="{{url('/detail-wo'.'/'.$wo->id)}}" class="btn btn-primary tn-block gradient"> Selengkapnya </a>
                                     </div>
                                 </div>
                         </div>
