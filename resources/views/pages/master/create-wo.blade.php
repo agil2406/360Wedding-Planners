@@ -34,7 +34,7 @@ Create Wedding Organizer
                             <div class="col-md-2">
                                 <label for="nama_wo" class="col-form-label">Nama WO</label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-10">
                                 <input type="text" class="form-control @error ('nama_wo') is-invalid @enderror" id="nama_wo" name="nama_wo" value="{{ old('nama_wo')}}" required autofocus>
                                 @error('nama_wo')
                                 <div class="invalid-feedback">
@@ -43,15 +43,54 @@ Create Wedding Organizer
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="row mt-3">
+                        <div class="row my-2">
+                            <div class="col-md-2">
+                                <label for="email" class="col-form-label">Email WO</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="email" class="form-control @error ('email') is-invalid @enderror" id="email" name="email" value="{{ old('email')}}">
+                                @error('email')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="col-md-2">
+                                <label for="nama_ig" class="col-form-label">Ig WO</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control @error ('nama_ig') is-invalid @enderror" id="nama_ig" name="nama_ig" value="{{ old('nama_ig')}}">
+                                @error('nama_ig')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-2">
+                                <label for="no_hp" class="col-form-label">No HP WO</label>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    <span class="input-group-text">+62</span>
+                                    <input type="number" class="form-control @error ('no_hp') is-invalid @enderror" id="no_hp" name="no_hp" value="{{ old('no_hp')}}" placeholder="875123654879">
+                                    @error('no_hp')
+                                    <div class="invalid-feedback">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-2">
                                 <label for="deskripsi" class="col-form-label">Deskripsi WO</label>
                                 @error('deskripsi')
                                 <p class="text-danger"> {{$message}}</p>
                                 @enderror
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-10">
                                 <input id="deskripsi" type="hidden" name="deskripsi" value="{{old('deskripsi')}}">
                                 <trix-editor input="deskripsi"></trix-editor>
                             </div>
@@ -63,7 +102,7 @@ Create Wedding Organizer
                             <div class="col-md-2">
                                 <label for="image" class="col-form-label">Foto WO </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-10">
                                 <input type="file" class="form-control @error ('image') is-invalid @enderror" id="image" name="image" value="{{ old('image')}}">
                                 @error('image')
                                 <div class="invalid-feedback">

@@ -74,13 +74,14 @@ Detail Wedding Organizer
                         </div>
                         <div class="card-body ">
                             <h5>Contact Person</h5>
-                            <p class="mb-0">Phone/WA : 0113223432</p>
-                            <p class="mb-0">Email : Benjalur @gmail.com</p>
-                            <p>Alamat : Jalan seroja no 9 praya Lombok tengah</p>
+                            <p class="mb-0">Phone/WA : 0{{$wo->no_hp}}</p>
+                            <p class="mb-0">Email : {{$wo->email}}</p>
                             <h5>Sosial Media</h5>
-                            <p class="mb-0">instagram : benajalur-wedding-org</p>
-                            <p>Facebok : benajalur-wedding-org</p>
-                            <button class="btn btn-primary tn-block gradient" type="submit">Contact Me</button>
+                            <p class="mb-2">instagram : {{$wo->nama_ig}}</p>
+                            <?php
+                            $Wa = 'https://api.whatsapp.com/send?phone=' . '0' . $paket->wo->no_hp;
+                            ?>
+                            <a href="{{$Wa}}"><button class="btn btn-primary tn-block gradient" type="submit">Contact Me</button></a>
                         </div>
                     </div>
                 </div>

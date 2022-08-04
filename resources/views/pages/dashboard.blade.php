@@ -7,25 +7,7 @@ Dashboard
 @section('content')
 
 <section class="home">
-    <<<<<<< HEAD <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-                =======
-                <div class="container">
-                    <div class="row mt-5">
-                        <div class="home-title mt-5">
-                            <p class="mt-5">360 Wedding Planner</p>
-                            >>>>>>> 3b64638fc4951116edec5476cfe0cded20aa34d7
-                        </div>
-                    </div>
-                </div>
+
 </section>
 
 <section class="organizer">

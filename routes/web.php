@@ -32,9 +32,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::view('/all-paket', 'pages.client.all-paket');
-Route::view('/detail-wo', 'pages.client.detail-wo');
-Route::view('/paket-akad', 'pages.client.paket-akad');
+
 Route::view('/profil-client', 'pages.client.profil-client');
 Route::view('/upgrade', 'pages.client.upgrade');
 Route::view('/rating', 'pages.client.rating');
@@ -44,11 +42,9 @@ Route::controller(ClientController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/detail-wo/{id}', 'detailwo');
     Route::get('/detail-paket/{id}', 'show');
-    Route::get('//wedding', 'vendor');
-    Route::delete('/admin/{id}', 'destroy');
-    Route::put('/admin/{id}', 'update');
-    Route::get('/admin/{id}/edit', 'edit');
-    Route::get('/admin/{id}', 'show');
+    Route::get('/wedding', 'vendor');
+    Route::get('/all-paket', 'store');
+    Route::post('/detail-order', 'create_order');
 });
 Route::group(['middleware' => ['auth', 'level:superAdmin']], function () {
     Route::controller(AdminController::class)->group(function () {
@@ -73,7 +69,7 @@ Route::group(['middleware' => ['auth', 'level:superAdmin']], function () {
 
 Route::group(['middleware' => ['auth', 'level:client']], function () {
 
-    Route::view('/detail-order', 'pages.client.detail-order');
+    Route::post('/detail-order', [ClientController::class, 'order']);
     Route::view('/invoice', 'pages.client.invoice');
 });
 

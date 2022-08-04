@@ -7,13 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav margin">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/">Home</a>
+          <a class="nav-link" aria-current="page" href="{{url('/')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/wedding">Vendor</a>
+          <a class="nav-link" href="{{url('/wedding')}}">Vendor</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="all-paket">Store</a>
+          <a class="nav-link" href="{{('/all-paket')}}">Store</a>
         </li>
 
 
@@ -26,13 +26,12 @@
             {{auth()->user()->name}}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="/profil-client">Profil</a></li>
-            <li><a class="dropdown-item" href="/pesanan">Pesanan Saya</a></li>
+            <li><a class="dropdown-item" href="{{url('/profil-client')}}">Profil</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
             <li>
-              <form action="/logout" method="post">
+              <form action="{{url('/logout')}}" method="post">
                 @csrf
                 <button type="submit" class="dropdown-item">
                   <i class="bi bi-box-arrow-right mr-2">Sign Out</i>
@@ -43,7 +42,7 @@
         </li>
         @else
         <li class="nav-item">
-          <a class="nav-link" href="/login">Sign in</a>
+          <a class="nav-link" href="{{url('/login')}}">Sign in</a>
         </li>
         @endauth
 

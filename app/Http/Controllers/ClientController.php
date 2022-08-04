@@ -6,6 +6,7 @@ use App\Models\Galery;
 use App\Models\PaketWO;
 use App\Models\WO;
 use Illuminate\Http\Request;
+use Mockery\Generator\StringManipulation\Pass\Pass;
 
 class ClientController extends Controller
 {
@@ -23,6 +24,12 @@ class ClientController extends Controller
         $galery = Galery::inRandomOrder()->limit(4)->get();
         return view('pages.client.wedding-org', compact(['wo', 'galery']));
     }
+    public function store()
+    {
+        $paket = PaketWO::all();
+        $galery = Galery::inRandomOrder()->limit(4)->get();
+        return view('pages.client.all-paket', compact(['paket', 'galery']));
+    }
     public function detailwo($id)
     {
         $wo = WO::find($id);
@@ -31,38 +38,28 @@ class ClientController extends Controller
         return view('pages.client.detail-wo', compact(['wo', 'galery', 'paket']));
     }
 
-
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-
     public function show($id)
     {
-        $wo = WO::all();
+        $galery = Galery::inRandomOrder()->limit(3)->get();
+        $allpaket = PaketWO::join('galeries', 'paketwos.id', 'galeries.id')->get();
         $paket = PaketWO::find($id);
-        return view('pages.client.paket-akad', compact(['wo', 'paket']));
+        return view('pages.client.paket-akad', compact(['allpaket', 'paket', 'galery']));
     }
 
-    public function edit($id)
+    public function create_order(Request $request)
     {
-        //
+        $this->validate($request, [
+            'tanggal_acara' => 'required'
+        ]);
+        $paket = PaketWO::find($request->paket_id);
+        $tanggal = $request->tanggal_acara;
+        return view('pages.client.detail-order', compact(['tanggal', 'paket']));
     }
-
-
-    public function update(Request $request, $id)
+    public function save_order(Request $request)
     {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
+        $validateData = $request->validate([
+            'level' => 'required'
+        ]);
+        return redirect('/myorder')->with('success', 'Data berhasil di tambahkan');
     }
 }

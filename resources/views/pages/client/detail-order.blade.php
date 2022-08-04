@@ -5,7 +5,7 @@ Dashboard
 @endsection
 
 @section('content')
-   
+
 
 <div class="container mt-order">
     <div class="title">
@@ -16,12 +16,12 @@ Dashboard
         <div class="d-flex justify-content-between align-items-center">
             <div>
                 <p>Detail Pesanan</p>
-                <p>paket akad wedding organizer</p>
+                <p>{{$paket->nama_paket}}</p>
             </div>
 
             <div>
                 <p>Jumlah</p>
-                <p>Rp.5.000.000</p>
+                <p>Rp.{{number_format($paket->harga,0)}}</p>
             </div>
         </div>
         <hr>
@@ -30,7 +30,7 @@ Dashboard
                 <p>Upgrade Paket ?</p>
             </div>
             <div>
-            <a href="/upgrade" class="btn btn-primary tn-block gradient-custom-2 mb-4"> Upgrade</a>
+                <a href="/upgrade" class="btn btn-primary tn-block gradient-custom-2 mb-4"> Upgrade</a>
             </div>
         </div>
         <hr>
@@ -39,7 +39,7 @@ Dashboard
                 <p>SubTotal</p>
             </div>
             <div>
-                <p>Rp.5000.000</p>
+                <p>Rp.{{number_format($paket->harga,0)}}</p>
             </div>
         </div>
         <hr>
@@ -48,7 +48,7 @@ Dashboard
                 <p>Total Pembayaran</p>
             </div>
             <div>
-                <p><b>Rp.5000.000</b></p>
+                <p><b>Rp.{{number_format($paket->harga,0)}}</b></p>
             </div>
         </div>
 
@@ -59,5 +59,5 @@ Dashboard
     </div>
 </div>
 </section>
- 
+
 @endsection
