@@ -6,12 +6,10 @@ Wedding Organizer
 
 @section('content')
 <section class="vendor">
-    <div class="container">
-        <div class="row mt-5">
-            <div class="home-title mt-5">
-                <p class="mt-5">Wedding Organizer</p>
+    <div class="d-flex container justify-content-center bg-primary mt-5">
+            <div class="home-title mt-5 mt-order">
+                <p class="mt-5 mt-order">Wedding Organizer</p>
             </div>
-        </div>
     </div>
 </section>
 
