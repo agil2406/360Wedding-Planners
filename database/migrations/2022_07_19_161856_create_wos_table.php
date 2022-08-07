@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nama_wo', 191)->nullable();
             $table->string('nama_ig', 191)->nullable();
             $table->string('email', 191)->nullable();
-            $table->number('no_hp')->nullable();
+            $table->integer('no_hp')->nullable();
             $table->longText('deskripsi', 191)->nullable();
             $table->string('image')->nullable();
             $table->float('rating')->nullable();

@@ -11,6 +11,7 @@ use App\Http\Controllers\UpdatePasswordController;
 
 use App\Http\Controllers\WoController;
 use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Route;
 
@@ -69,8 +70,8 @@ Route::group(['middleware' => ['auth', 'level:superAdmin']], function () {
 
 Route::group(['middleware' => ['auth', 'level:client']], function () {
 
-    Route::post('/detail-order', [ClientController::class, 'order']);
-    Route::view('/invoice', 'pages.client.invoice');
+    Route::post('/detail-order', [ClientController::class, 'create_order']);
+    Route::post('/save_order', [ClientController::class, 'save_order']);
 });
 
 Route::group(['middleware' => ['auth', 'level:Admin']], function () {
@@ -98,6 +99,10 @@ Route::group(['middleware' => ['auth', 'level:Admin']], function () {
         Route::post('/galery', 'store');
         Route::get('/galery/{id}', 'show');
         Route::delete('/galery/{id}', 'destroy');
+    });
+    Route::controller(OrderController::class)->group(function () {
+        Route::get('/pesanan', 'index');
+        Route::delete('/pesanan/{id}', 'destroy');
     });
 
 

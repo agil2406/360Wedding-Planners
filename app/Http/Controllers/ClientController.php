@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Galery;
+use App\Models\Order;
 use App\Models\PaketWO;
+use App\Models\Pesanan;
 use App\Models\WO;
 use Illuminate\Http\Request;
 use Mockery\Generator\StringManipulation\Pass\Pass;
@@ -58,8 +60,12 @@ class ClientController extends Controller
     public function save_order(Request $request)
     {
         $validateData = $request->validate([
-            'level' => 'required'
+            'tgl_acara' => 'required',
+            'paket_id' => 'required',
+            'user_id' => 'required',
+            'total' => 'required'
         ]);
-        return redirect('/myorder')->with('success', 'Data berhasil di tambahkan');
+        Pesanan::create($validateData);
+        return redirect('/');
     }
 }
