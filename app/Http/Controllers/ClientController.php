@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Galery;
+use App\Models\Order;
 use App\Models\PaketWO;
+use App\Models\Pesanan;
 use App\Models\WO;
 use Illuminate\Http\Request;
+use Mockery\Generator\StringManipulation\Pass\Pass;
 
 class ClientController extends Controller
 {
@@ -13,7 +16,7 @@ class ClientController extends Controller
     public function index()
     {
         $wo = WO::all();
-        $paket = PaketWO::join('galeries', 'paketwos.wo_id', '=', 'galeries.id')->get();
+        $paket = PaketWO::join('galeries', 'galeries.id', 'paketwos.id')->get();
         $galery = Galery::inRandomOrder()->limit(4)->get();
         return view('pages.dashboard', compact(['wo', 'paket', 'galery']));
     }
@@ -23,39 +26,46 @@ class ClientController extends Controller
         $galery = Galery::inRandomOrder()->limit(4)->get();
         return view('pages.client.wedding-org', compact(['wo', 'galery']));
     }
-
-
-    public function create()
+    public function store()
     {
-        //
+        $paket = PaketWO::all();
+        $galery = Galery::inRandomOrder()->limit(4)->get();
+        return view('pages.client.all-paket', compact(['paket', 'galery']));
+    }
+    public function detailwo($id)
+    {
+        $wo = WO::find($id);
+        $galery = Galery::where('wo_id', $id)->get();
+        $paket = PaketWO::join('galeries', 'galeries.id', 'paketwos.id')->get();
+        return view('pages.client.detail-wo', compact(['wo', 'galery', 'paket']));
     }
 
-    public function store(Request $request)
+    public function show($id)
     {
-        //
+        $galery = Galery::inRandomOrder()->limit(3)->get();
+        $allpaket = PaketWO::join('galeries', 'paketwos.id', 'galeries.id')->get();
+        $paket = PaketWO::find($id);
+        return view('pages.client.paket-akad', compact(['allpaket', 'paket', 'galery']));
     }
 
-
-    public function show()
+    public function create_order(Request $request)
     {
-        $wo = WO::all();
-        $paket = PaketWO::find(1);
-        return view('pages.client.paket-akad', compact(['wo', 'paket']));
+        $this->validate($request, [
+            'tanggal_acara' => 'required'
+        ]);
+        $paket = PaketWO::find($request->paket_id);
+        $tanggal = $request->tanggal_acara;
+        return view('pages.client.detail-order', compact(['tanggal', 'paket']));
     }
-
-    public function edit($id)
+    public function save_order(Request $request)
     {
-        //
-    }
-
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
+        $validateData = $request->validate([
+            'tgl_acara' => 'required',
+            'paket_id' => 'required',
+            'user_id' => 'required',
+            'total' => 'required'
+        ]);
+        Pesanan::create($validateData);
+        return redirect('/');
     }
 }

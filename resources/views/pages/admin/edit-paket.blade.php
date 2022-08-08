@@ -23,7 +23,7 @@ Edit Paket
                     <h5>Ubah data Paket WO</h5>
                 </div>
                 <div class="card-body">
-                    <form action="{{url('/paket'.'/'.$data->id)}}" method="post">
+                    <form action="{{url('/paketupdate').'/'.$data->id}}" method="post">
                         @method('put')
                         @csrf
                         <div class="row">
@@ -31,7 +31,7 @@ Edit Paket
                                 <label for="nama_paket" class="col-form-label">Nama Paket</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control @error ('nama_paket') is-invalid @enderror" id="nama_paket" name="nama_paket" value="{{ $data->nama_paket}}" required autofocus>
+                                <input type="text" class="form-control @error ('nama_paket') is-invalid @enderror" id="nama_paket" name="nama_paket" value="{{ $data->nama_paket}}">
                                 @error('nama_paket')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -76,7 +76,7 @@ Edit Paket
                                 <label for="lokasi" class="col-form-label">Lokasi <br> (Gedung) </label>
                             </div>
                             <div class="col-md-3">
-                                <input type="text" class="form-control @error ('lokasi') is-invalid @enderror" id="lokasi" name="lokasi" value="{{ $data->lokasi}}" readonly>
+                                <input type="text" class="form-control @error ('lokasi') is-invalid @enderror" id="lokasi" name="lokasi" value="{{ $data->lokasi}}">
                                 @error('lokasi')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -87,7 +87,7 @@ Edit Paket
                                 <label for="entertain" class="col-form-label">Entertain</label>
                             </div>
                             <div class="col-md-3">
-                                <input type="text" class="form-control @error ('entertain') is-invalid @enderror" id="entertain" name="entertain" value="{{ $data->entertain}}" readonly>
+                                <input type="text" class="form-control @error ('entertain') is-invalid @enderror" id="entertain" name="entertain" value="{{ $data->entertain}}">
                                 @error('entertain')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -101,7 +101,7 @@ Edit Paket
                                 <label for="cathering" class="col-form-label">Catering </label>
                             </div>
                             <div class="col-md-3">
-                                <input type="text" class="form-control @error ('catering') is-invalid @enderror" id="catering" name="catering" value="{{ $data->catering}}" readonly>
+                                <input type="text" class="form-control @error ('catering') is-invalid @enderror" id="catering" name="catering" value="{{ $data->catering}}">
                                 @error('catering')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -112,7 +112,7 @@ Edit Paket
                                 <label for="dekorasi" class="col-form-label">Dekorasi </label>
                             </div>
                             <div class="col-md-3">
-                                <input type="text" class="form-control @error ('dekorasi') is-invalid @enderror" id="dekorasi" name="dekorasi" value="{{ $data->dekorasi}}" readonly>
+                                <input type="text" class="form-control @error ('dekorasi') is-invalid @enderror" id="dekorasi" name="dekorasi" value="{{ $data->dekorasi}}">
                                 @error('dekorasi')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -126,7 +126,7 @@ Edit Paket
                                 <label for="mua" class="col-form-label">MUA </label>
                             </div>
                             <div class="col-md-3">
-                                <input type="text" class="form-control @error ('mua') is-invalid @enderror" id="mua" name="mua" value="{{$data->mua}}" readonly>
+                                <input type="text" class="form-control @error ('mua') is-invalid @enderror" id="mua" name="mua" value="{{$data->mua}}">
                                 @error('mua')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -137,7 +137,7 @@ Edit Paket
                                 <label for="mc" class="col-form-label">MC </label>
                             </div>
                             <div class="col-md-3">
-                                <input type="text" class="form-control @error ('mc') is-invalid @enderror" id="mc" name="mc" value="{{$data->mc}}" readonly>
+                                <input type="text" class="form-control @error ('mc') is-invalid @enderror" id="mc" name="mc" value="{{$data->mc}}">
                                 @error('mc')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -157,6 +157,9 @@ Edit Paket
                                 <input id="deskripsi" type="hidden" name="deskripsi" value="{{$data->deskripsi}}">
                                 <trix-editor input="deskripsi"></trix-editor>
                             </div>
+                        </div>
+                        <div class="row">
+                            <input type="text" value="{{$data->wo_id}}" name="wo_id" hidden>
                         </div>
                         <div class="d-flex align-items-center">
                             <button class="btn btn-primary tn-block gradient-custom-2 center mt-2 mb-2 text-white" type="submit">Ubah Data</button>

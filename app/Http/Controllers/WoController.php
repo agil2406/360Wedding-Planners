@@ -29,6 +29,9 @@ class WoController extends Controller
         $validateData = $request->validate([
             'nama_wo' => 'required',
             'deskripsi' => 'required',
+            'nama_ig' => 'required',
+            'no_hp' => 'required',
+            'email' => 'required',
             'image' => 'image|file|max:5120'
         ]);
         if ($request->file('image')) {
@@ -58,6 +61,9 @@ class WoController extends Controller
         $validateData = $request->validate([
             'nama_wo' => 'required',
             'deskripsi' => 'required',
+            'nama_ig' => 'required',
+            'no_hp' => 'required',
+            'email' => 'required',
             'image' => 'image|file|max:5120'
         ]);
         if ($request->file('image')) {

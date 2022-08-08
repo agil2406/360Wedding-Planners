@@ -11,6 +11,7 @@ use App\Http\Controllers\UpdatePasswordController;
 
 use App\Http\Controllers\WoController;
 use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,22 +33,20 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::view('/all-paket', 'pages.client.all-paket');
-Route::view('/detail-wo', 'pages.client.detail-wo');
-Route::view('/paket-akad', 'pages.client.paket-akad');
+
 Route::view('/profil-client', 'pages.client.profil-client');
-Route::view('/upgrade', 'pages.client.upgrade');
+
 Route::view('/rating', 'pages.client.rating');
+Route::view('/order', 'pages.client.order');
 
 
 Route::controller(ClientController::class)->group(function () {
     Route::get('/', 'index');
-    Route::get('/detail-paket', 'show');
-    Route::get('//wedding', 'vendor');
-    Route::delete('/admin/{id}', 'destroy');
-    Route::put('/admin/{id}', 'update');
-    Route::get('/admin/{id}/edit', 'edit');
-    Route::get('/admin/{id}', 'show');
+    Route::get('/detail-wo/{id}', 'detailwo');
+    Route::get('/detail-paket/{id}', 'show');
+    Route::get('/wedding', 'vendor');
+    Route::get('/all-paket', 'store');
+    Route::post('/detail-order', 'create_order');
 });
 Route::group(['middleware' => ['auth', 'level:superAdmin']], function () {
     Route::controller(AdminController::class)->group(function () {
@@ -72,8 +71,9 @@ Route::group(['middleware' => ['auth', 'level:superAdmin']], function () {
 
 Route::group(['middleware' => ['auth', 'level:client']], function () {
 
-    Route::view('/detail-order', 'pages.client.detail-order');
-    Route::view('/invoice', 'pages.client.invoice');
+    Route::post('/detail-order', [ClientController::class, 'create_order']);
+    Route::post('/save_order', [ClientController::class, 'save_order']);
+    Route::view('/upgrade', 'pages.client.upgrade');
 });
 
 Route::group(['middleware' => ['auth', 'level:Admin']], function () {
@@ -90,7 +90,7 @@ Route::group(['middleware' => ['auth', 'level:Admin']], function () {
         Route::get('/paket', 'create');
         Route::post('/paket', 'store');
         Route::get('/paket/{id}', 'show');
-        Route::put('/paket/{id}/update', 'update');
+        Route::put('/paketupdate/{id}', 'update');
         Route::get('/paket/{id}/edit', 'edit');
         Route::delete('/paket/{id}', 'destroy');
     });
@@ -102,9 +102,12 @@ Route::group(['middleware' => ['auth', 'level:Admin']], function () {
         Route::get('/galery/{id}', 'show');
         Route::delete('/galery/{id}', 'destroy');
     });
+    Route::controller(OrderController::class)->group(function () {
+        Route::get('/pesanan', 'index');
+        Route::delete('/pesanan/{id}', 'destroy');
+    });
 
 
-    Route::view('/dashboardAdmin', 'pages.admin.dashboardAdmin');
 
     Route::controller(ProfilController::class)->group(function () {
         Route::get('/profil-wo/{id}', 'index');

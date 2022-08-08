@@ -31,7 +31,7 @@ Wedding Organizer
                             @for ($i = 0; $i < 3; $i++) <i class="fa fa-star checked"></i>@endfor
                                 <div class="row my-2">
                                     <div class="justify-content-center">
-                                        <a href="/janur-kuning-wo" class="btn btn-primary tn-block gradient"> Daftar paket</a>
+                                        <a href="{{url('/detail-wo'.'/'.$wo->id)}}" class="btn btn-primary tn-block gradient"> Selengkapnya </a>
                                     </div>
                                 </div>
                         </div>

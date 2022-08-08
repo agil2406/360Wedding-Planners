@@ -10,12 +10,12 @@
 	<meta content="" name="keywords">
 
 	<link rel="stylesheet" type="text/css" href="{{ url('frontend/assets/css/trix.css') }}">
-	<link href="{{ url('frontend/assets/css/style.css') }}" rel="stylesheet">
 	<script type="text/javascript" src="{{ url('frontend/assets/js/trix.js') }}"></script>
 
 	<!-- Favicons -->
 	@include('includes.styling')
 	<link rel="stylesheet" href="{{url('frontend/assets/css/portal.css')}}">
+	<link rel="stylesheet" href="{{url('frontend/assets/css/style2.css')}}">
 	<link rel="stylesheet" href="{{url('frontend/assets/vendors/mdi/css/materialdesignicons.min.css')}}">
 	<link rel="stylesheet" href="{{url('frontend/assets/vendors/css/vendor.bundle.base.css')}}">
 	<link href="{{ url('frontend/assets/vendors/mdi/css/materialdesignicons.min.css') }}" rel="stylesheet">
@@ -56,7 +56,7 @@
 									<form action="/logout" method="post">
 										@csrf
 										<button type="submit" class="dropdown-item">
-											<i class="bi bi-box-arrow-right"></i>Sign Out
+											<i class="bi bi-box-arrow-right mr-2">Sign Out</i>
 										</button>
 									</form>
 								</li>
@@ -88,18 +88,6 @@
 
 
 						@can('admin')
-
-
-
-
-						<li class="nav-item">
-							<a class="nav-link" href="{{url('/dashboardAdmin')}}">
-								<span class="nav-icon">
-									<i class="fa-solid fa-house"></i>
-								</span>
-								<span class="nav-link-text">Dashboard</span>
-							</a>
-						</li>
 
 						<li class="nav-item">
 							<a class="nav-link " href="{{url('/galery')}}">

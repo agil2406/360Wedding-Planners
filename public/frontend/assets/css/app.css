@@ -162,10 +162,6 @@ footer {
     color: rgba(110, 44, 107, 1);
     font-family: arkhip;
 }
-.photo {
-    font-size: 10px;
-    opacity: 2;
-}
 
 .login .welcome {
     margin-top: 80px;

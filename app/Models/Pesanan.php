@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class WO extends Model
+class Pesanan extends Model
 {
-    protected $table = 'wos';
+    protected $table = 'orders';
     protected $guarded = ['id'];
 
     public function paket()
     {
-        return $this->hasMany(PaketWO::class);
+        return $this->belongsTo(PaketWO::class);
     }
-    public function galery()
+    public function user()
     {
-        return $this->hasMany(Galery::class);
+        return $this->belongsTo(User::class);
     }
 }

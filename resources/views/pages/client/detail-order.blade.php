@@ -5,7 +5,7 @@ Dashboard
 @endsection
 
 @section('content')
-   
+
 
 <div class="container mt-order">
     <div class="title">
@@ -16,48 +16,41 @@ Dashboard
         <div class="d-flex justify-content-between align-items-center">
             <div>
                 <p>Detail Pesanan</p>
-                <p>paket akad wedding organizer</p>
+                <p>{{$paket->nama_paket}}</p>
+                <p>Tanggal Acara {{date('d M Y',strtotime($tanggal))}}</p>
             </div>
-
             <div>
                 <p>Jumlah</p>
-                <p>Rp.5.000.000</p>
+                <p>Rp.{{number_format($paket->harga,0)}}</p>
             </div>
         </div>
         <hr>
         <div class="d-flex justify-content-between align-items-center">
-            <div>
-                <p>Upgrade Paket ?</p>
-            </div>
-            <div>
-            <a href="/upgrade" class="btn btn-primary tn-block gradient-custom-2 mb-4"> Upgrade</a>
-            </div>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-between align-items-center">
-            <div>
-                <p>SubTotal</p>
-            </div>
-            <div>
-                <p>Rp.5000.000</p>
-            </div>
+            {!!$paket->deskripsi!!}
         </div>
         <hr>
         <div class="d-flex justify-content-between items-center">
             <div>
                 <p>Total Pembayaran</p>
+
             </div>
             <div>
-                <p><b>Rp.5000.000</b></p>
+                <p><b>Rp.{{number_format($paket->harga,0)}}</b></p>
             </div>
         </div>
-
-        <div class="d-flex justify-content-center mt-4">
-            <a href="/invoice" class="btn btn-primary tn-block gradient-custom-2 mb-4"> Lanjutkan Pembayaran</a>
-        </div>
+        <form action="{{url('/save_order')}}" method="post">
+            @csrf
+            <input type="date" name="tgl_acara" value="{{$tanggal}}" hidden>
+            <input type="int" name="paket_id" value="{{$paket->id}}" hidden>
+            <input type="int" name="user_id" value="{{auth()->user()->id}}" hidden>
+            <input type="int" name="total" value="{{$paket->harga}}" hidden>
+            <div class="d-flex justify-content-center mt-4">
+                <button class="btn btn-primary tn-block gradient-custom-2 mb-4" type="submit"> Lanjutkan Pembayaran</button>
+            </div>
+        </form>
 
     </div>
 </div>
 </section>
- 
+
 @endsection
