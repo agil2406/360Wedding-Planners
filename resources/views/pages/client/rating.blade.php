@@ -13,7 +13,7 @@
 </head>
 <body>
 @include('includes.navbar')
-	<div class="container">
+	<div class="rating-star">
 		<div class="rating-wrap">
 			<h2>Beri Penilaian Anda</h2>
 			<div class="center">

@@ -35,8 +35,9 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 
 Route::view('/profil-client', 'pages.client.profil-client');
-Route::view('/upgrade', 'pages.client.upgrade');
+
 Route::view('/rating', 'pages.client.rating');
+Route::view('/order', 'pages.client.order');
 
 
 Route::controller(ClientController::class)->group(function () {
@@ -72,6 +73,7 @@ Route::group(['middleware' => ['auth', 'level:client']], function () {
 
     Route::post('/detail-order', [ClientController::class, 'create_order']);
     Route::post('/save_order', [ClientController::class, 'save_order']);
+    Route::view('/upgrade', 'pages.client.upgrade');
 });
 
 Route::group(['middleware' => ['auth', 'level:Admin']], function () {
@@ -106,7 +108,6 @@ Route::group(['middleware' => ['auth', 'level:Admin']], function () {
     });
 
 
-    Route::view('/dashboardAdmin', 'pages.admin.dashboardAdmin');
 
     Route::controller(ProfilController::class)->group(function () {
         Route::get('/profil-wo/{id}', 'index');

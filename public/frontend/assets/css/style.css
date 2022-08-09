@@ -18,7 +18,7 @@ body {
         url("../img/bg.jpg") no-repeat center center / cover;
 }
 
-.container {
+.rating-star {
     display: flex;
     align-items: center;
     justify-content: center;

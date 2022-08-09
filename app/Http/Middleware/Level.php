@@ -24,7 +24,7 @@ class Level
         if (Auth::user()->level == 'client'){
             return Redirect::to('/');
         } elseif (Auth::user()->level == 'Admin'){
-            return Redirect::to('/dashboardAdmin');
+            return Redirect::to('/paketwo');
         } elseif (Auth::user()->level == 'superAdmin'){
             return Redirect::to('/admin');
         }

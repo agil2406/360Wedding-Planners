@@ -10,12 +10,12 @@
 	<meta content="" name="keywords">
 
 	<link rel="stylesheet" type="text/css" href="{{ url('frontend/assets/css/trix.css') }}">
-	<link href="{{ url('frontend/assets/css/style.css') }}" rel="stylesheet">
 	<script type="text/javascript" src="{{ url('frontend/assets/js/trix.js') }}"></script>
 
 	<!-- Favicons -->
 	@include('includes.styling')
 	<link rel="stylesheet" href="{{url('frontend/assets/css/portal.css')}}">
+	<link rel="stylesheet" href="{{url('frontend/assets/css/style2.css')}}">
 	<link rel="stylesheet" href="{{url('frontend/assets/vendors/mdi/css/materialdesignicons.min.css')}}">
 	<link rel="stylesheet" href="{{url('frontend/assets/vendors/css/vendor.bundle.base.css')}}">
 	<link href="{{ url('frontend/assets/vendors/mdi/css/materialdesignicons.min.css') }}" rel="stylesheet">
@@ -88,18 +88,6 @@
 
 
 						@can('admin')
-
-
-
-
-						<li class="nav-item">
-							<a class="nav-link" href="{{url('/dashboardAdmin')}}">
-								<span class="nav-icon">
-									<i class="fa-solid fa-house"></i>
-								</span>
-								<span class="nav-link-text">Dashboard</span>
-							</a>
-						</li>
 
 						<li class="nav-item">
 							<a class="nav-link " href="{{url('/galery')}}">
@@ -206,10 +194,11 @@
 			<div class="app-content pt-3 p-md-3 p-lg-4">
 				<div class="container-xl">
 					@yield('content')
+				
 				</div>
 
 			</div>
-
+			@include('includes.footer')
 		</div>
 	</main>
 
@@ -217,7 +206,7 @@
 	<!--//app-content-->
 
 
-	@include('includes.footer')
+	
 	@include('includes.script2')
 
 

@@ -7,7 +7,11 @@ Dashboard
 @section('content')
 
 <section class="home">
-
+    <div class="d-flex container justify-content-center bg-primary mt-5">
+            <div class="home-title mt-5 mt-order">
+                <p class="mt-5 mt-order">360 Wedding Planner</p>
+            </div>
+    </div>
 </section>
 
 <section class="organizer">
