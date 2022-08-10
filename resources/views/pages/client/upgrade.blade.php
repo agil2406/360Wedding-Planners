@@ -1,18 +1,17 @@
 @extends('layouts.app')
 
 @section('title')
-Dashboard
+360 Wedding Planner
 @endsection
 
 @section('content')
- 
+
 <section class="vendor">
     <div class="container ">
         <div class="row mt-5 mt-order">
             <div class="title mt-5 mb-3">
                 <h3 class="text-center">Upgrade Paket</h3>
             </div>
-
             <div class="card card-galery w-75 mx-auto p-3 mb-4">
                 <div class="">
                     <div>
@@ -22,65 +21,86 @@ Dashboard
                                 <td>
                                     Nama Paket
                                 </td>
+                                <td>
+                                    {{$order->paket->nama_paket}}
+                                </td>
                             </tr>
                             <tr>
                                 <td>
                                     Lokasi
                                 </td>
                                 <td>
-                                    Narmada Convention Hall
+                                    {{$order->paket->lokasi}}
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    MUA
+                                    Kapasitas
                                 </td>
                                 <td>
-                                    agil
+                                    {{$order->paket->kapasitas}}
                                 </td>
                             </tr>
-                            
+                            <tr>
+                                <td>
+                                    Make Up Artist
+                                </td>
+                                <td>
+                                    {{$order->paket->mua}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Catering
+                                </td>
+                                <td>
+                                    {{$order->paket->catering}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Dekorasi
+                                </td>
+                                <td>
+                                    {{$order->paket->dekorasi}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Entertain
+                                </td>
+                                <td>
+                                    {{$order->paket->entertain}}
+                                </td>
+                            </tr>
+
                         </table>
                     </div>
                 </div>
                 <hr>
-            
-                
-                <div class="d-flex justify-content-between items-center">
-                    <div>
-                        <p>Total Pembayaran</p>
+                <!-- Horizontal Form -->
+                <form action="{{url('/upgrade').'/'.$order->id}}" method="POST">
+                    @method('put')
+                    @csrf
+                    <div class="row mb-3">
+                        <label for="upgrade" class="col-sm-2 col-form-label">Catatan Tambahan <br>( Upgrade )</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control @error('upgrade') is-invalid  @enderror" placeholder="Ingin Lokasi di Pindah " id="floatingTextarea" style="height: 100px;" name="upgrade"></textarea>
+                            @error('upgrade')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                     </div>
-                    <div>
-                        <p><b>Rp.5000.000</b></p>
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-primary tn-block gradient-custom-2 mb-4">Upgrade Pesanan</button>
+                        <a href="{{url('/order')}}" class="btn btn-secondary mb-4" type="reset">Batal</a>
                     </div>
-                </div>
-
-                <div class="card d-flex w-75 mx-auto p-5">
-                    <form action="">
-                        <label for="" class="mb-2">Upgrade lokasi</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Pilih Lokasi Pilihan anda</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                        <label for="" class="mb-2 mt-3">Upgrade MUA</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Pilih MUA Pilihan anda</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </form>
-                </div>
-
-                <div class="d-flex justify-content-center mt-4">
-                    <a href="/invoice" class="btn btn-primary tn-block gradient-custom-2 mb-4"> Upgrade</a>
-                </div>
-
+                </form><!-- End Horizontal Form -->
             </div>
         </div>
     </div>
 </section>
- 
+
 @endsection

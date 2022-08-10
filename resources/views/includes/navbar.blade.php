@@ -13,24 +13,19 @@
           <a class="nav-link" href="{{url('/wedding')}}">Vendor</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{('/all-paket')}}">Store</a>
+          <a class="nav-link" href="{{url('/all-paket')}}">Store</a>
         </li>
 
 
         @auth
         <li class="nav-item">
-          <a class="nav-link" href="#">Order</a>
+          <a class="nav-link" href="{{url('/order')}}">Order</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{auth()->user()->name}}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="{{url('/profil-client')}}">Profil</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li>
               <form action="{{url('/logout')}}" method="post">
                 @csrf
                 <button type="submit" class="dropdown-item">

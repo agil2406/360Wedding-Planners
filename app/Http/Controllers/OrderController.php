@@ -48,4 +48,16 @@ class OrderController extends Controller
         $data->delete();
         return redirect('/pesanan')->with('success', 'Data berhasil di Hapus');
     }
+    public function setuju($id)
+    {
+        $pesanan = Pesanan::find($id);
+        $pesanan->update(['status' => 2]);
+        return redirect()->back();
+    }
+    public function tolak($id)
+    {
+        $pesanan = Pesanan::find($id);
+        $pesanan->update(['status' => 0]);
+        return redirect()->back();
+    }
 }

@@ -34,11 +34,7 @@ Route::get('/register', [RegisterController::class, 'index'])->name('register')-
 Route::post('/register', [RegisterController::class, 'store']);
 
 
-Route::view('/profil-client', 'pages.client.profil-client');
-
-Route::view('/rating', 'pages.client.rating');
-Route::view('/order', 'pages.client.order');
-
+// Route::view('/profil-client', 'pages.client.profil-client');
 
 Route::controller(ClientController::class)->group(function () {
     Route::get('/', 'index');
@@ -71,9 +67,15 @@ Route::group(['middleware' => ['auth', 'level:superAdmin']], function () {
 
 Route::group(['middleware' => ['auth', 'level:client']], function () {
 
-    Route::post('/detail-order', [ClientController::class, 'create_order']);
+    Route::post('/create-order', [ClientController::class, 'create_order']);
     Route::post('/save_order', [ClientController::class, 'save_order']);
-    Route::view('/upgrade', 'pages.client.upgrade');
+    Route::get('/order', [ClientController::class, 'order']);
+    Route::get('/detail-order/{id}', [ClientController::class, 'detail_order']);
+    Route::get('/upgrade/{id}', [ClientController::class, 'upgrade']);
+    Route::put('/upgrade/{id}', [ClientController::class, 'save_upgrade']);
+    Route::get('/invoice/{id}', [ClientController::class, 'invoice']);
+    Route::get('/rating/{id}', [ClientController::class, 'rating']);
+    Route::post('/rating', [ClientController::class, 'save_rating']);
 });
 
 Route::group(['middleware' => ['auth', 'level:Admin']], function () {
@@ -84,7 +86,6 @@ Route::group(['middleware' => ['auth', 'level:Admin']], function () {
     Route::get('/passwordUpdate', [UpdatePasswordController::class, 'edit'])->name('passwordUpdate');
     Route::put('/passwordUpdate', [UpdatePasswordController::class, 'update']);
 
-    Route::view('/pesanan', 'pages.admin.pesanan');
     Route::controller(PaketController::class)->group(function () {
         Route::get('/paketwo', 'index');
         Route::get('/paket', 'create');
@@ -105,6 +106,8 @@ Route::group(['middleware' => ['auth', 'level:Admin']], function () {
     Route::controller(OrderController::class)->group(function () {
         Route::get('/pesanan', 'index');
         Route::delete('/pesanan/{id}', 'destroy');
+        Route::get('/pesanan/{id}/setuju', 'setuju');
+        Route::get('/pesanan/{id}/tolak', 'tolak');
     });
 
 

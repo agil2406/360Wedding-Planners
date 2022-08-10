@@ -8,9 +8,9 @@ Dashboard
 
 <section class="home">
     <div class="d-flex container justify-content-center bg-primary mt-5">
-            <div class="home-title mt-5 mt-order">
-                <p class="mt-5 mt-order">360 Wedding Planner</p>
-            </div>
+        <div class="home-title mt-5 mt-order">
+            <p class="mt-5 mt-order">360 Wedding Planner</p>
+        </div>
     </div>
 </section>
 
@@ -37,7 +37,6 @@ Dashboard
                         <div class="card-body">
                             <h5 class="card-title center">{{$wo->nama_wo}}</h5>
                             <p class="card-text">Lombok, ID</p>
-                            @for ($i = 0; $i < 3; $i++) <i class="fa fa-star checked"></i>@endfor
                         </div>
                     </div>
                 </div>

@@ -29,6 +29,56 @@ Detail Wedding Organizer
 
             </div>
         </div>
+        <?php
+        $rating = $total / $jumlah;
+        ?>
+        @if ($rating)
+        <div class="row">
+            <div class="col-md-8">
+
+                <div class="card-title">
+                </div>
+                <div class="card-body">
+                    <div class="center">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 mt-2">
+                <div class="card">
+                    <div class="card-title">
+                        <h4 class="center">Rating Kami</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="center">
+                            @for ($i = 0; $i < floor($rating) ; $i++) <i class="fa fa-star checked"></i>@endfor
+                                <div>
+                                    <p>
+                                        <b style="font-size: 28px;">{{floor($rating)}} </b>/ 5
+                                    </p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @else
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-title">
+                        <h4 class="center">Rating Kami</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="center">
+                            <p class="center">Rating Kami Belum Ada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
     </div>
 
 </section>

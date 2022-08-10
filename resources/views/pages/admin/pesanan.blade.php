@@ -48,6 +48,11 @@ Paket Wedding Organizer
                                 </th>
                                 <th>
                                     <div class="row justify-content-center">
+                                        CATATAN (UPGRADE)
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="row justify-content-center">
                                         TOTAL
                                     </div>
                                 </th>
@@ -84,41 +89,56 @@ Paket Wedding Organizer
                                 </td>
                                 <td>
                                     <div class="row justify-content-center">
+                                        {{$pesanan->paket->upgrade}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="row justify-content-center">
                                         Rp.{{number_format($pesanan->total,0)}}
                                     </div>
                                 </td>
-                                @if ($pesanan->status == 0 )
+                                @if ($pesanan->status == 1 )
                                 <td>
                                     <div class="d-flex justify-content-center mt-2">
                                         <span class="badge bg-warning text-dark">Sedang Proses</span>
                                     </div>
                                 </td>
-                                @else
+                                @elseif($pesanan->status == 2 )
                                 <td>
                                     <div class="d-flex justify-content-center mt-2">
                                         <span class="badge bg-success">Pembayaran Selesai</span>
                                     </div>
                                 </td>
-                                @endif
+                                @else
                                 <td>
-                                    <div class="row">
-                                        <div class="row justify-content-center">
-                                            <div class="col-sm-2">
-
-
-                                            </div>
-                                            <div class="col-sm-2">
-
-                                            </div>
-                                            <div class="col-sm-2">
-
-                                            </div>
+                                    <div class="d-flex justify-content-center mt-2">
+                                        <span class="badge bg-danger">Pembayaran Gagal </span>
+                                    </div>
+                                </td>
+                                @endif
+                                @if($pesanan->status != 1)
+                                <td>
+                                    <div class="d-flex justify-content-center mt-1">
+                                        <div class="col-sm-4">
+                                            <p> - </p>
                                         </div>
+
                                     </div>
 
                                 </td>
+                                @else
+                                <td>
+                                    <div class="d-flex justify-content-center mt-1">
+                                        <div class="col-sm-5">
+                                            <a class="badge bg-success" href="{{url('rekap').'/'.$pesanan->id.'/setuju'}}"> Pembayaran Selesai </a>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <a class="badge bg-danger" href="{{url('pesan').'/'.$pesanan->id}}"> Pembayaran Gagal </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                @endif
                             </tr>
-
                             @endforeach
                         </tbody>
                     </table>
